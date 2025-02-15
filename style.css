@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in element dimensions */
+}
+
+/*======= HEADER ========*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding: 1.5%; /* Adjusted to percentage */
+    border-bottom: 0.1vw solid #ddd; /* Adjusted to viewport width */
+}
+
+header img {
+    height: 6vw; /* Adjusted to viewport width */
+    margin: 0 1%; /* Adjusted to percentage */
+}
+
+header h1 {
+    font-size: 4vw; /* Nagyobb méret, de reszponzív */
+    color: #333;
+    margin: 0;
+}
+
+header p {
+    font-size: 2vw; /* Reszponzív méret az alcímhez */
+    color: #666;
+    font-style: italic;
+    padding-left: 100px; /* Ezt is állíthatod szükség szerint */
+}
+
+.gab_feher_bal,
+.gab_feher_jobb {
+    position: absolute;
+    height: 6vw; /* Adjusted to viewport width */
+    margin-left: 1.5%; /* Adjusted to percentage */
+}
+
+.gab_feher_bal {
+    left: 0;
+}
+
+.gab_feher_jobb {
+    right: 0;
+}
+
+/*======= HEADER VÉGE ========*/
+
+/*======= NAV ========*/
+main, nav {
+    background-color: #161A1D;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1.5% 0; /* Adjusted to percentage */
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+    background-color: red;
+    border-radius: 2vw; /* Adjusted to viewport width */
+    padding: 0.5% 3%; /* Adjusted to percentage */
+    width: 80%; /* Adjusted to percentage */
+}
+
+nav ul li {
+    padding: 0.8% 2.5%; /* Adjusted to percentage */
+    font-weight: bold;
+    transition: 0.3s;
+    color: white;
+}
+
+nav ul li:hover {
+    background-color: darkred;
+    border-radius: 1.5vw; /* Adjusted to viewport width */
+    cursor: pointer;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    display: block;
+    font-size: 20px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: darkred;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 1.5vw; /* Adjusted to viewport width */
+    width: 10vw; /* Adjusted to viewport width */
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding: 5%; /* Adjusted to percentage */
+}
+
+.dropdown-menu li a {
+    color: white;
+    padding: 0.5%; /* Adjusted to percentage */
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+nav ul li.dropdown {
+    position: relative;
+}
+
+.dropdown-menu li:hover {
+    background-color: crimson;
+}
+
+/*======= NAV VÉGE ========*/
+
+/*======= TABELLA ========*/
+.eredmenyek_felirat,
+.hirek_felirat {
+    color: #D9D9D9;
+    margin: 0% 1.5%; /* Adjusted to percentage */
+    font-size: 4vw; /* Adjusted to viewport width */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+hr {
+    margin: 1.5%; /* Adjusted to percentage */
+}
+
+.eredmenyek_korosztaly {
+    margin: 0.3% 1.5%; /* Adjusted to percentage */
+    font-size: 1.8vw; /* Adjusted to viewport width */
+}
+
+.eredmenyek_meccs {
+    font-size: 1.8vw; /* Adjusted to viewport width */
+    margin-left: 4%; /* Adjusted to percentage */
+}
+
+.eredmenyek_csik {
+    display: flex;
+    gap: 0.8%; /* Adjusted to percentage */
+    align-items: center;
+    background-color: #D9D9D9;
+    margin: 0.8% 2.5%; /* Adjusted to percentage */
+    border-radius: 0.3vw; /* Adjusted to viewport width */
+    justify-content: space-between;
+}
+
+.eredmenyek_bal {
+    display: flex;
+    gap: 0.8%; /* Adjusted to percentage */
+    align-items: center;
+}
+
+.meccs_idopont {
+    margin-left: auto;
+    text-align: right;
+}
+
+/*======= TABELLA VÉGE ========*/
+
+/*======= SECTION ========*/
+.sections-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5%; /* Adjusted to percentage */
+    max-width: 80%; /* Adjusted to percentage */
+    margin: 0 auto;
+}
+
+section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5%; /* Adjusted to percentage */
+    padding: 0 1.5%; /* Adjusted to percentage */
+    background-color: #fff;
+    border-radius: 0.8vw; /* Adjusted to viewport width */
+    box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1); /* Adjusted to viewport width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-0.6vw); /* Adjusted to viewport width */
+    box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.2); /* Adjusted to viewport width */
+}
+
+section img {
+    width: 10vw; /* Adjusted to viewport width */
+    height: auto;
+    border-radius: 0.8vw; /* Adjusted to viewport width */
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hír_cim {
+    font-size: 2.3vw; /* Relative unit */
+    color: #333;
+    margin: 0 0 0.8% 0; /* Adjusted to percentage */
+}
+
