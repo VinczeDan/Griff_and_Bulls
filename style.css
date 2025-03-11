@@ -12,6 +12,16 @@ header {
     background-color: #f4f4f4;
     padding: 1.5%;
     border-bottom: 0.1vw solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+body {
+    padding-top: 10vw; /* Helyet biztosít a rögzített fejlécnek */
+    background-color:  #161A1D;
 }
 
 header img {
@@ -46,10 +56,10 @@ header p {
 .gab_feher_jobb {
     right: 0;
 }
-
 /*======= HEADER VÉGE ========*/
 
 /*======= NAV ========*/
+/* Alap navigációs stílusok */
 main, nav {
     background-color: #161A1D;
 }
@@ -165,7 +175,7 @@ nav ul li.dropdown {
     background-color: white;
     margin: 4px 0;
 }
-
+/* Reszponzív módosítások */
 @media (max-width: 1200px) {
     .hamburger {
         display: flex;
@@ -188,49 +198,16 @@ nav ul li.dropdown {
     .nav-links li {
         text-align: left;
         padding: 15px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .dropdown-menu {
-        display: none;
-        position: static;
-        width: 100%;
-        background-color: #444;
-    }
-
-    .dropdown-menu.active {
         display: block;
     }
 
-    .dropdown > a::after {
-        content: "+";
-        position: static;
-        margin-left: auto;
-        font-size: 20px;
-        color: white;
+    /* A dropdown menü mobilnézetben eltávolítva */
+    .dropdown .dropdown-menu {
+        display: none !important;
     }
 
-    .dropdown.active > a::after {
-        content: "-";
-    }
-}
-
-@media (min-width: 1201px) {
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
-}
-
-@media (max-width: 1200px) {
-    .dropdown:hover .dropdown-menu {
-        display: none;
-    }
-
-    .dropdown-menu.active {
-        display: block;
+    .dropdown a {
+        pointer-events: auto;
     }
 }
 
@@ -324,4 +301,69 @@ section img {
     font-size: 2.3vw;
     color: #333;
     margin: 0 0 0.8% 0;
+}
+
+
+/*======= FOOTER ========*/
+footer {
+    background-color: #161A1D;
+    color: white;
+    padding: 2vw 0;
+    text-align: center;
+    border-top: 0.3vw solid #D9D9D9;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+    gap: 2vw;
+}
+
+.footer-info, .footer-socials, .footer-links {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-info h3, 
+.footer-socials h3, 
+.footer-links h3 {
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+
+.footer-info p,
+.footer-socials a,
+.footer-links a {
+    font-size: 1.5vw;
+    color: #D9D9D9;
+    text-decoration: none;
+    display: block;
+    margin: 0.5vw 0;
+}
+
+.footer-socials a:hover,
+.footer-links a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.footer-copy {
+    margin-top: 2vw;
+    font-size: 1.2vw;
+    opacity: 0.7;
+}
+
+/* Reszponzív módosítások */
+@media (max-width: 1200px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info, .footer-socials, .footer-links {
+        margin-bottom: 2vw;
+    }
 }
