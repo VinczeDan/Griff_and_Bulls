@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*======= HEADER ========*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding: 1.5%;
+    border-bottom: 0.1vw solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    padding: 0.5%;
+}
+
+header.scrolled img {
+    height: 4vw;
+}
+
+header.scrolled h1 {
+    font-size: 3vw;
+}
+
+header.scrolled p {
+    font-size: 1.5vw;
+    padding-left: 50px;
+}
+
+body {
+    padding-top: 8vw;
+    background-color: #161A1D;
+    color: #D9D9D9;
+    font-family: 'Arial', sans-serif;
+}
+
+header img {
+    height: 6vw;
+    margin: 0 1%;
+}
+
+header h1 {
+    font-size: 4vw;
+    color: #333;
+    margin: 0;
+}
+
+header p {
+    font-size: 2vw;
+    color: #666;
+    font-style: italic;
+    padding-left: 100px;
+}
+
+.gab_feher_bal,
+.gab_feher_jobb {
+    position: absolute;
+    height: 6vw;
+    margin-left: 1.5%;
+}
+
+.gab_feher_bal {
+    left: 0;
+}
+
+.gab_feher_jobb {
+    right: 0;
+}
+
+/*======= MAIN CONTENT ========*/
+main.csapatok-container {
+    padding-top: 4vw;
+    padding-left: 3vw;
+    margin: 0; /* Remove auto margin to align left */
+    text-align: left; /* Align text to the left */
+}
+
+.edzok-section{
+    margin-bottom: 2vw;
+}
+
+.poszt-section{
+    margin-bottom: 1vq;
+}
+.edzok-section, .poszt-section {
+    text-align: left; /* Align section content to the left */
+}
+
+.edzok-section h2, .poszt-section h2 {
+    font-size: 1.7vw;
+    color: rgb(255, 37, 37);
+    margin-bottom: 0.5vw;
+    display: inline-block; /* Make the title inline-block */
+    margin-right: 10px; /* Add space between the title and names */
+}
+
+.edzok-section p, .poszt-section p {
+    font-size: 1.4vw;
+    color: #D9D9D9;
+    line-height: 1.6;
+    text-align: left; /* Align paragraphs to the left */
+    margin: 0; /* Remove default margin */
+    display: inline-block; /* Make the names inline-block */
+}
+
+.poszt {
+    color: #FF6B6B;
+}

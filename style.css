@@ -5,6 +5,7 @@
 }
 
 /*======= HEADER ========*/
+/* Default header styles */
 header {
     display: flex;
     align-items: center;
@@ -17,6 +18,30 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Smaller header when scrolled */
+header.scrolled {
+    padding: 0.5%; /* Reduce padding */
+}
+
+header.scrolled img {
+    height: 4vw; /* Reduce image size */
+}
+
+header.scrolled h1 {
+    font-size: 3vw; /* Reduce font size */
+}
+
+header.scrolled p {
+    font-size: 1.5vw; /* Reduce font size */
+    padding-left: 50px; /* Adjust padding */
+}
+
+/* Adjust body padding to account for smaller header */
+body {
+    padding-top: 8vw; /* Reduce padding to match smaller header */
 }
 
 body {
