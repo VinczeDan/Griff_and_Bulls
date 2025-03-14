@@ -1,0 +1,49 @@
+/*======= Edző html ========*/
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.edzok_tablazat {
+    color: whitesmoke;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.edzok_tablazat th{
+    padding: 15px 20px;
+    text-align: left;
+}
+.edzok_tablazat td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.edzok_tablazat th {
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%; 
+}
+
+
+
+
+
+
+.tablazat_fejlec {
+    background-color: #ff4757;
+    color: white;
+    justify-content: center;
+}
