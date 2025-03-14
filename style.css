@@ -298,57 +298,49 @@ hr {
 /*======= TABELLA VÉGE ========*/
 
 /*======= HÍREK  ========*/
-.eredmenyek_felirat,
-.hirek_felirat, 
-.kovetkezo_meccseing_felirat {
-    color: #D9D9D9;
-    margin: 0% 1.5%;
-    font-size: 4vw;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 
-hr {
-    margin: 1.5%;
-}
-
-.eredmenyek_korosztaly {
-    margin: 0.3% 1.5%;
-    font-size: 1.8vw;
-}
-
-.eredmenyek_meccs {
-    font-size: 1.8vw;
-    margin-left: 4%;
-}
-
-.eredmenyek_div,
-.kovetkezo_meccsek_div {
-    width: 45%; /* Csökkentjük a szélességet, hogy legyen hely a középen */
-    display: inline-block; /* Egymás mellé helyezi a div-eket */
-    vertical-align: top; /* A div-ek teteje legyen igazítva */
-    margin: 0 2%; /* Térköz a két div között */
-}
-
-.eredmenyek_csik {
+.sections-container {
     display: flex;
-    gap: 0.8%;
-    align-items: center;
-    background-color: #D9D9D9;
-    margin: 0.8% 2.5%;
-    border-radius: 0.3vw;
     justify-content: space-between;
-    width: 100%; /* Teljes szélességű legyen a szülő div-en belül */
-}
-
-.eredmenyek_bal {
-    display: flex;
-    gap: 0.8%;
+    gap: 1.5%;
     align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
-.meccs_idopont {
-    margin-left: auto;
-    text-align: right;
+.hirek_section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1.5%;
+    background-color: whitesmoke;
+    border-radius: 0.8vw;
+    box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hirek_section:hover {
+    transform: translateY(-0.6vw);
+    box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.hirek_section img {
+    width: 10vw;
+    padding: 3%;
+    height: auto;
+    border-radius: 2vw;
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+}
+
+.hír_cim {
+    font-size: 2.3vw;
+    color: #333;
+    margin: 0 0 0.8% 0;
 }
 
 /*======= HÍREK VÉGE ========*/
