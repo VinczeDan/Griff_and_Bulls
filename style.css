@@ -296,7 +296,7 @@ hr {
 }
 
 /* Reszponzív módosítások */
-@media (max-width: 1000px) {
+@media (max-width: 860px) {
   .eredmenyek_div,
   .kovetkezo_meccsek_div {
     width: 100%; /* Teljes szélességű legyen */
