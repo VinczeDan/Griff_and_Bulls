@@ -1,189 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Griff & Bulls</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <img class="gab_feher_bal" src="gab_feher.png" alt="fehet gab kep">
-        <div class="header-text">
-            <h1>Griff and Bulls</h1>
-            <p>Egyesület egy kicsit másképp...</p>
-        </div>
-        <img class="gab_feher_jobb" src="gab_feher.png" alt="fehet gab kep">
+      <img class="gab_feher_bal" src="gab_feher.png" alt="fehet gab kep" />
+      <div class="header-text">
+        <h1>Griff and Bulls</h1>
+        <p>Egyesület egy kicsit másképp...</p>
+      </div>
+      <img class="gab_feher_jobb" src="gab_feher.png" alt="fehet gab kep" />
     </header>
     <nav>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Kezdőlap</a></li>
-            <li><a href="#">Rólunk</a></li>
-            <li class="dropdown">
-                <a href="#">Csapataink</a>
-                <ul class="dropdown-menu">
-                    <li><a href="csapatok/felnott.html">Felnőtt BLSZ III.</a></li>
-                    <li><a href="csapatok/u19.html">U19</a></li>
-                    <li><a href="csapatok/u17.html">U17</a></li>
-                    <li><a href="csapatok/u16.html">U16</a></li>
-                    <li><a href="csapatok/u15.html">U15</a></li>
-                    <li><a href="csapatok/u11.html">U11</a></li>
-                    <li><a href="csapatok/oldboys.html">Old Boys</a></li>
-                    <li><a href="csapatok/oregfiuk.html">Öreg fiúk</a></li>
-                </ul>
-            </li>
-            <li><a href="edzok.html">Edzőink</a></li>
-            <li><a href="#">Pályázat</a></li>
-            <li><a href="#kapcsolat">Kapcsolat</a></li>
-        </ul>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Kezdőlap</a></li>
+        <li><a href="#rolunk">Rólunk</a></li>
+        <li class="dropdown">
+          <a href="#">Csapataink</a>
+          <ul class="dropdown-menu">
+            <li><a href="csapatok/felnott.html">Felnőtt BLSZ III.</a></li>
+            <li><a href="csapatok/u19.html">U19</a></li>
+            <li><a href="https://youtube.com">U17</a></li>
+            <li><a href="csapatok/u16.html">U16</a></li>
+            <li><a href="csapatok/u15.html">U15</a></li>
+            <li><a href="csapatok/u11.html">U11</a></li>
+            <li><a href="csapatok/oldboys.html">Old Boys</a></li>
+            <li><a href="csapatok/oregfiuk.html">Öregfiúk</a></li>
+          </ul>
+        </li>
+        <li><a href="edzok.html">Edzőink</a></li>
+        <li><a href="#">Pályázat</a></li>
+        <li><a href="#kapcsolat">Kapcsolat</a></li>
+      </ul>
     </nav>
     <main>
-        <div class="egesz-hirek">
+      <div class="egesz-hirek">
         <h1 class="hirek_felirat">Híreink</h1>
-        <hr>
+        <hr />
         <div class="sections-container">
-        <section class="hirek_section">
-            <img src="GAB_piros_jo.jpg" alt="Piros gab kep">
+          <section class="hirek_section">
+            <img src="GAB_piros_jo.jpg" alt="Piros gab kep" />
             <h3 class="hír_cim">Új kapusedzőt igazoltunk</h3>
-            </section>
+          </section>
 
-        <section class="hirek_section">
-            <img src="GAB_piros_jo.jpg" alt="Piros gab kep">
+          <section class="hirek_section">
+            <img src="GAB_piros_jo.jpg" alt="Piros gab kep" />
             <h3 class="hír_cim">Erönléti edzőt igazoltunk</h3>
-        </section>
+          </section>
 
-        <section class="hirek_section">
-            <img src="GAB_piros_jo.jpg" alt="Piros gab kep">
+          <section class="hirek_section">
+            <img src="GAB_piros_jo.jpg" alt="Piros gab kep" />
             <h3 class="hír_cim">ÖREGFIÚK!</h3>
-        </section>
+          </section>
         </div>
-    </div>
-    <div class="eredmenyek_div">
+      </div>
+      <div class="eredmenyek_div">
         <h1 class="eredmenyek_felirat">Eredmények</h1>
-        <hr>
+        <hr />
         <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U19</h2>
-                <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-                    </div>
-            <p class="meccs_idopont">2025.01.10</p>
-        </div>
-        
-        <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U17</h2>
-                <h2 class="eredmenyek_meccs">real-barca</h2>
-                <div class="eredmenyek_bal">
-                </div>
-        </div>
-            <p class="meccs_idopont">2025.01.10</p>
-        </div>  
-
-        <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U17</h2>
-                <h2 class="eredmenyek_meccs">real-barca</h2>
-                <div class="eredmenyek_bal">
-                </div>
-        </div>
-            <p class="meccs_idopont">2025.01.10</p>
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U19</h2>
+            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
 
         <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U17</h2>
-                <h2 class="eredmenyek_meccs">real-barca</h2>
-                <div class="eredmenyek_bal">
-                </div>
-        </div>
-            <p class="meccs_idopont">2025.01.10</p>
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U17</h2>
+            <h2 class="eredmenyek_meccs">real-barca</h2>
+            <div class="eredmenyek_bal"></div>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
 
         <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U17</h2>
-                <h2 class="eredmenyek_meccs">real-barca</h2>
-                <div class="eredmenyek_bal">
-                </div>
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U17</h2>
+            <h2 class="eredmenyek_meccs">real-barca</h2>
+            <div class="eredmenyek_bal"></div>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
-            <p class="meccs_idopont">2025.01.10</p>
+
+        <div class="eredmenyek_csik">
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U17</h2>
+            <h2 class="eredmenyek_meccs">real-barca</h2>
+            <div class="eredmenyek_bal"></div>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
-    </div>
-    <div class="kovetkezo_meccsek_div">
+
+        <div class="eredmenyek_csik">
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U17</h2>
+            <h2 class="eredmenyek_meccs">real-barca</h2>
+            <div class="eredmenyek_bal"></div>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
+        </div>
+      </div>
+      <div class="kovetkezo_meccsek_div">
         <h1 class="kovetkezo_meccseing_felirat">Következő meccseink</h1>
-        <hr>
+        <hr />
         <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U19</h2>
-                <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-                    </div>
-            <p class="meccs_idopont">2025.01.10</p>
-        </div>
-        
-
-        <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U19</h2>
-                <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-                    </div>
-            <p class="meccs_idopont">2025.01.10</p>
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U19</h2>
+            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
 
         <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U19</h2>
-                <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-                    </div>
-            <p class="meccs_idopont">2025.01.10</p>
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U19</h2>
+            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
 
         <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U19</h2>
-                <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-                    </div>
-            <p class="meccs_idopont">2025.01.10</p>
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U19</h2>
+            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
 
         <div class="eredmenyek_csik">
-            <div class="eredmenyek_bal">
-                <h2 class="eredmenyek_korosztaly">U19</h2>
-                <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-                    </div>
-            <p class="meccs_idopont">2025.01.10</p>
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U19</h2>
+            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
         </div>
-    </div>
+
+        <div class="eredmenyek_csik">
+          <div class="eredmenyek_bal">
+            <h2 class="eredmenyek_korosztaly">U19</h2>
+            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
+          </div>
+          <p class="meccs_idopont">2025.01.10</p>
+        </div>
+      </div>
+
+      <div class="rolunk_container", id="rolunk">
+        <h1 class="rolunk_felirat">Rólunk</h1>
+        <div class="csempek_div">
+          <div class="jelenunk_container">
+            <h2>Jelenünk</h2>
+            <p>
+              Több mint 180, MLSZ által leigazolt labdarúgóval rendelkezünk, az
+              U7 korosztályától egészen az Old Boys kategóriáig bezárólag.
+            </p>
+            <p>5 korosztály Nemzeti bajnokságok Utánpótlás rendezvények</p>
+          </div>
+          <div class="rovid_cel_container">
+            <h2>Rövidtávú célok:</h2>
+
+            <ol>
+              <li>Intézményi bázis kialakítása</li>
+              <li>
+                Intézményi bázis kialakítása Sportolási lehetőségek
+                kiszélesítése a gyermek és ifjúsági labdarúgás területén,
+                óvodákban, iskolákban.
+              </li>
+              <li>
+                Egyéni képzések lehetőségének megteremtése Szabadidős
+                tevékenységek kisebb közösségeknek Nyári edzőtáborok és
+                üdültetések Sportprogramok szervezése
+              </li>
+            </ol>
+          </div>
+          <div class="hosszu_cel_container">
+            <h2>Hosszútávú célok:</h2>
+            <p>
+              Együttműködés állami és magán céggekkel, szervezetekkel, akik
+              hangsúlyt fordítanak a dolgozóIk és családjaik értékes szabadidős
+              tevékenységére, a kellemesebb munkahelyi környezetre
+            </p>
+
+            <p>Focibajnokság - Családi nap - Közösség építő programok</p>
+
+            <p>TEREMTSÜNK KÖZÖS ÉLMÉNYEKET ÉS TEGYÜNK EGYÜTT A KÖZÖSSÉGÉRT!</p>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>Griff & Bulls SE</h3>
-                <p><strong>Cím:</strong> 1234 Budapest, Sport utca 5.</p>
-                <p><strong>Telefon:</strong> +36 30 123 4567</p>
-                <p><strong>E-mail:</strong> info@griffbulls.hu</p>
-            </div>
-            <section class= footer_kapcsolat, id="kapcsolat">
-                <div class="footer-socials">
-                    <h3>Kövess minket!</h3>
-                    <a href="https://www.facebook.com/p/Griff-Bulls-SE-100057331514748/" target="_blank">Facebook</a> 
-                    <a href="https://www.instagram.com/griff_and_bulls_se?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a> 
-                </div>
-            </section>
-            
-            <div class="footer-links">
-                <h3>Fontos linkek</h3>
-                <a href="#">Felhasználási feltételek</a>
-            </div>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3>Griff & Bulls SE</h3>
+          <p><strong>Cím:</strong> 1234 Budapest, Sport utca 5.</p>
+          <p><strong>Telefon:</strong> +36 30 123 4567</p>
+          <p><strong>E-mail:</strong> info@griffbulls.hu</p>
         </div>
-        
-        <p class="footer-copy">© 2025 Griff & Bulls SE - Minden jog fenntartva.</p>
+        <section class="footer_kapcsolat," id="kapcsolat">
+          <div class="footer-socials">
+            <h3>Kövess minket!</h3>
+            <a
+              href="https://www.facebook.com/p/Griff-Bulls-SE-100057331514748/"
+              target="_blank"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/griff_and_bulls_se?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </section>
+
+        <div class="footer-links">
+          <h3>Fontos linkek</h3>
+          <a href="#">Felhasználási feltételek</a>
+        </div>
+      </div>
+
+      <p class="footer-copy">
+        © 2025 Griff & Bulls SE - Minden jog fenntartva.
+      </p>
     </footer>
-    
-</body>
+  </body>
 </html>
