@@ -267,7 +267,7 @@ hr {
 
 .eredmenyek_div,
 .kovetkezo_meccsek_div {
-  width: 45%; /* Keep as % */
+  width: 45%; /* Alapértelmezett szélesség */
   display: inline-block; /* Egymás mellé helyezi a div-eket */
   vertical-align: top; /* A div-ek teteje legyen igazítva */
   margin: 0 20px; /* 2% -> 20px */
@@ -295,7 +295,20 @@ hr {
   text-align: right;
 }
 
-/*======= TABELLA VÉGE ========*/
+/* Reszponzív módosítások */
+@media (max-width: 1000px) {
+  .eredmenyek_div,
+  .kovetkezo_meccsek_div {
+    width: 100%; /* Teljes szélességű legyen */
+    display: block; /* Egymás alatt legyenek */
+    margin: 0; /* Nincs margó */
+  }
+
+  .eredmenyek_csik {
+    margin: 10px 0; /* Margó csökkentése */
+    border-radius: 0; /* Sarkok lekerekítésének eltávolítása */
+  }
+}
 
 /*======= HÍREK  ========*/
 
