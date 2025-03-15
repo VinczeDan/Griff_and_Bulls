@@ -82,7 +82,6 @@ header p {
   right: 0;
 }
 /*======= HEADER VÉGE ========*/
-
 /*======= NAV ========*/
 /* Alap navigációs stílusok */
 
@@ -240,52 +239,54 @@ nav ul li.dropdown {
 
 /*======= NAV VÉGE ========*/
 
+/*======= NAV VÉGE ========*/
+
 /*======= TABELLA ========*/
 .eredmenyek_felirat,
 .hirek_felirat,
 .kovetkezo_meccseing_felirat {
   color: #d9d9d9;
-  margin: 0% 1.5%;
-  font-size: 4vw;
+  margin: 0 15px; /* 1.5% -> 15px */
+  font-size: 40px; /* 4vw -> 40px */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 hr {
-  margin: 1.5%;
+  margin: 15px; /* 1.5% -> 15px */
 }
 
 .eredmenyek_korosztaly {
-  margin: 0.3% 1.5%;
-  font-size: 1.8vw;
+  margin: 5px 15px; /* 0.3% 1.5% -> 5px 15px */
+  font-size: 18px; /* 1.8vw -> 18px */
 }
 
 .eredmenyek_meccs {
-  font-size: 1.8vw;
-  margin-left: 4%;
+  font-size: 18px; /* 1.8vw -> 18px */
+  margin-left: 40px; /* 4% -> 40px */
 }
 
 .eredmenyek_div,
 .kovetkezo_meccsek_div {
-  width: 45%; /* Csökkentjük a szélességet, hogy legyen hely a középen */
+  width: 45%; /* Keep as % */
   display: inline-block; /* Egymás mellé helyezi a div-eket */
   vertical-align: top; /* A div-ek teteje legyen igazítva */
-  margin: 0 2%; /* Térköz a két div között */
+  margin: 0 20px; /* 2% -> 20px */
 }
 
 .eredmenyek_csik {
   display: flex;
-  gap: 0.8%;
+  gap: 10px; /* 0.8% -> 10px */
   align-items: center;
   background-color: #d9d9d9;
-  margin: 0.8% 2.5%;
-  border-radius: 0.3vw;
+  margin: 10px 25px; /* 0.8% 2.5% -> 10px 25px */
+  border-radius: 3px; /* 0.3vw -> 3px */
   justify-content: space-between;
   width: 100%; /* Teljes szélességű legyen a szülő div-en belül */
 }
 
 .eredmenyek_bal {
   display: flex;
-  gap: 0.8%;
+  gap: 10px; /* 0.8% -> 10px */
   align-items: center;
 }
 
@@ -301,7 +302,7 @@ hr {
 .sections-container {
   display: flex;
   justify-content: space-between;
-  gap: 1.5%;
+  gap: 15px; /* 1.5% -> 15px */
   align-items: center;
   max-width: 80%;
   margin: 0 auto;
@@ -311,24 +312,20 @@ hr {
   flex: 1;
   display: flex;
   align-items: center;
-  gap: 1.5%;
+  gap: 15px; /* 1.5% -> 15px */
   background-color: whitesmoke;
-  border-radius: 0.8vw;
-  box-shadow: 0 0.3vw 0.6vw rgba(0, 0, 0, 0.1);
+  border-radius: 8px; /* 0.8vw -> 8px */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 0.3vw 0.6vw -> 3px 6px */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hirek_section:hover {
-  transform: translateY(-0.6vw);
-  box-shadow: 0 0.6vw 1.2vw rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
+
 
 .hirek_section img {
-  width: 10vw;
-  padding: 3%;
+  width: 100px; /* 10vw -> 100px */
+  padding: 3%; /* 3% -> 30px */
   height: auto;
-  border-radius: 2vw;
+  border-radius: 20px; /* 2vw -> 20px */
 }
 
 .text-content {
@@ -337,20 +334,39 @@ hr {
 }
 
 .hír_cim {
-  font-size: 2.3vw;
+  font-size: 20px; /* 2.3vw -> 23px */
   color: #333;
-  margin: 0 0 0.8% 0;
+  margin: 0 0 8px 0; /* 0.8% -> 8px */
 }
 
+@media (max-width: 768px) {
+  .sections-container {
+    flex-direction: column;
+    gap: 10%;
+  }
+
+  .hirek_section {
+    width: 100%;
+    margin: 15px;
+  }
+
+  .hirek_section img {
+    width: 150px; /* 15vw -> 150px */
+  }
+
+  .hír_cim {
+    font-size: 3.5vw; /* 3.5vw -> 35px */
+  }
+}
 /*======= HÍREK VÉGE ========*/
 
 /*======= FOOTER ========*/
 footer {
   background-color: #161a1d;
   color: white;
-  padding: 2vw 0;
+  padding: 20px 0; /* 2vw -> 20px */
   text-align: center;
-  border-top: 0.3vw solid #161a1d;
+  border-top: 3px solid #161a1d; /* 0.3vw -> 3px */
 }
 
 .footer-container {
@@ -359,7 +375,7 @@ footer {
   flex-wrap: wrap;
   max-width: 80%;
   margin: 0 auto;
-  gap: 2vw;
+  gap: 20px; /* 2vw -> 20px */
 }
 
 .footer-info,
@@ -372,18 +388,18 @@ footer {
 .footer-info h3,
 .footer-socials h3,
 .footer-links h3 {
-  font-size: 2vw;
-  margin-bottom: 1vw;
+  font-size: 20px; /* 2vw -> 20px */
+  margin-bottom: 10px; /* 1vw -> 10px */
 }
 
 .footer-info p,
 .footer-socials a,
 .footer-links a {
-  font-size: 1.5vw;
+  font-size: 15px; /* 1.5vw -> 15px */
   color: #d9d9d9;
   text-decoration: none;
   display: block;
-  margin: 0.5vw 0;
+  margin: 5px 0; /* 0.5vw -> 5px */
 }
 
 .footer-socials a:hover,
@@ -393,8 +409,8 @@ footer {
 }
 
 .footer-copy {
-  margin-top: 2vw;
-  font-size: 1.2vw;
+  margin-top: 20px; /* 2vw -> 20px */
+  font-size: 12px; /* 1.2vw -> 12px */
   opacity: 0.7;
 }
 
@@ -408,13 +424,16 @@ footer {
   .footer-info,
   .footer-socials,
   .footer-links {
-    margin-bottom: 2vw;
+    margin-bottom: 20px; /* 2vw -> 20px */
   }
 }
-
+/*======= FOOTER VÉGE ========*/
 html {
   scroll-behavior: smooth;
-}.rolunk_felirat {
+}
+
+/*======= RÓLUNK ========*/
+.rolunk_felirat {
   color: whitesmoke;
   text-align: center;
   margin-top: 40px;
@@ -448,12 +467,7 @@ html {
   color: whitesmoke;
 }
 
-.jelenunk_container:hover,
-.rovid_cel_container:hover,
-.hosszu_cel_container:hover {
-  transform: translateY(-10px); /* Egérrel föléhúzás animáció */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Nagyobb árnyék hover állapotban */
-}
+
 
 .jelenunk_container h2,
 .rovid_cel_container h2,
@@ -514,3 +528,5 @@ html {
     font-size: 1rem;
   }
 }   
+
+/*======= RÓLUNK VÉGE ========*/
