@@ -202,10 +202,23 @@ nav ul li.dropdown {
   margin: 4px 0;
 }
 
+
+
 /* Reszponzív módosítások */
 @media (max-width: 1200px) {
   .hamburger {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    position: relative; /* Hozzáadva */
+  }
+
+  .hamburger .line {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
   }
 
   .nav-links {
@@ -213,13 +226,18 @@ nav ul li.dropdown {
     flex-direction: column;
     width: 100%;
     background-color: #333;
-    position: absolute;
-    top: 180px;
+    position: absolute; /* Abszolút pozíció */
+    top: 50px; /* A hamburger ikon alatt jelenik meg */
     left: 0;
+    z-index: 1000;
+    transform: translateY(-100%); /* Elrejtés az oldal tetején */
+    transition: transform 0.3s ease-in-out; /* Animáció hozzáadása */
   }
 
   .nav-links.active {
     display: flex;
+    transform: translateY(0); /* Menü megjelenítése */
+    margin-top: 13%;
   }
 
   .nav-links li {
@@ -240,6 +258,22 @@ nav ul li.dropdown {
   /* A "Csapatok" menüpont kattintható a hamburger menüben */
   .dropdown a[onclick] {
     pointer-events: auto;
+  }
+
+  /* Overlay eltávolítva */
+  .overlay {
+    display: none !important;
+  }
+
+  /* Görgetés letiltása, ha a menü aktív */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* A többi elem eltolása, ha a menü aktív */
+  body.menu-open .content {
+    transform: translateY(200px); /* A menü magasságától függően állítsd be */
+    transition: transform 0.3s ease-in-out;
   }
 }
 
