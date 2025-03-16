@@ -1,3 +1,4 @@
 u19.html legyen egy gomb vissza a tobbi csapatra
 ha nagyon kicsi akkor headerben kepeket kivenni 
 hamburger menubol rolunkra megyunk akkor utana se lehet porgetni
+hamburger menu a 3 csikon van rajta
