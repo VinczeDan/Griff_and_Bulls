@@ -201,6 +201,7 @@ nav ul li.dropdown {
   background-color: white;
   margin: 4px 0;
 }
+
 /* Reszponzív módosítások */
 @media (max-width: 1200px) {
   .hamburger {
@@ -235,11 +236,22 @@ nav ul li.dropdown {
   .dropdown a {
     pointer-events: auto;
   }
+
+  /* A "Csapatok" menüpont kattintható a hamburger menüben */
+  .dropdown a[onclick] {
+    pointer-events: auto;
+  }
+}
+
+/* Normál nézetben a "Csapatok" menüpont nem kattintható, csak hover effektus */
+@media (min-width: 1201px) {
+  .dropdown a[onclick] {
+    pointer-events: none;
+  }
 }
 
 /*======= NAV VÉGE ========*/
 
-/*======= NAV VÉGE ========*/
 
 /*======= TABELLA ========*/
 .eredmenyek_felirat,
@@ -295,21 +307,26 @@ hr {
   text-align: right;
 }
 
-/* Reszponzív módosítások */
+/* Reszponzív módosítások 680px alatt */
 @media (max-width: 860px) {
   .eredmenyek_div,
   .kovetkezo_meccsek_div {
     width: 100%; /* Teljes szélességű legyen */
     display: block; /* Egymás alatt legyenek */
     margin: 0; /* Nincs margó */
+    padding: 0 18px; /* Padding a szélek mentén */
   }
 
   .eredmenyek_csik {
-    margin: 10px 0; /* Margó csökkentése */
-    border-radius: 0; /* Sarkok lekerekítésének eltávolítása */
+    margin: 10px 0; /* Felső és alsó margó */
+    border-radius: 3px; /* Sarkok lekerekítése */
+    width: 100%; /* Teljes szélesség */
+    padding: 0 15px; /* Padding a szélek mentén */
+    box-sizing: border-box; /* Padding beleszámít a szélességbe */
   }
 }
 
+/*======= TABELLA VÉGE  ========*/
 /*======= HÍREK  ========*/
 
 .sections-container {
@@ -338,7 +355,7 @@ hr {
   width: 100px; /* 10vw -> 100px */
   padding: 3%; /* 3% -> 30px */
   height: auto;
-  border-radius: 20px; /* 2vw -> 20px */
+  border-radius: 20%; /* 2vw -> 20px */
 }
 
 .text-content {
@@ -352,7 +369,7 @@ hr {
   margin: 0 0 8px 0; /* 0.8% -> 8px */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .sections-container {
     flex-direction: column;
     gap: 10%;
@@ -364,7 +381,8 @@ hr {
   }
 
   .hirek_section img {
-    width: 150px; /* 15vw -> 150px */
+    width: 30%; /* 15vw -> 150px */
+    border-radius: 20%;
   }
 
   .hír_cim {

@@ -4,108 +4,116 @@
     box-sizing: border-box;
 }
 
+
 /*======= HEADER ========*/
+/* Default header styles */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f4f4f4;
-    padding: 1.5%;
-    border-bottom: 0.1vw solid #ddd;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  padding: 1.5%;
+  border-bottom: 0.1vw solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
+/* Smaller header when scrolled */
 header.scrolled {
-    padding: 0.5%;
+  padding: 0.5%; /* Reduce padding */
 }
 
 header.scrolled img {
-    height: 4vw;
+  height: 4vw; /* Reduce image size */
 }
 
 header.scrolled h1 {
-    font-size: 3vw;
+  font-size: 3vw; /* Reduce font size */
 }
 
 header.scrolled p {
-    font-size: 1.5vw;
-    padding-left: 50px;
+  font-size: 1.5vw; /* Reduce font size */
+  padding-left: 50px; /* Adjust padding */
+}
+
+/* Adjust body padding to account for smaller header */
+body {
+  padding-top: 8vw; /* Reduce padding to match smaller header */
 }
 
 body {
-    padding-top: 8vw;
-    background-color: #161A1D;
-    color: #D9D9D9;
-    font-family: 'Arial', sans-serif;
+  padding-top: 10vw; /* Helyet biztosít a rögzített fejlécnek */
+  background-color: #161a1d;
 }
 
 header img {
-    height: 6vw;
-    margin: 0 1%;
+  height: 6vw;
+  margin: 0 1%;
 }
 
 header h1 {
-    font-size: 4vw;
-    color: #333;
-    margin: 0;
+  font-size: 4vw;
+  color: #333;
+  margin: 0;
 }
 
 header p {
-    font-size: 2vw;
-    color: #666;
-    font-style: italic;
-    padding-left: 100px;
+  font-size: 2vw;
+  color: #666;
+  font-style: italic;
+  padding-left: 100px;
 }
 
 .gab_feher_bal,
 .gab_feher_jobb {
-    position: absolute;
-    height: 6vw;
-    margin-left: 1.5%;
+  position: absolute;
+  height: 6vw;
+  margin-left: 1.5%;
 }
 
 .gab_feher_bal {
-    left: 0;
+  left: 0;
 }
 
 .gab_feher_jobb {
-    right: 0;
+  right: 0;
 }
+/*======= HEADER VÉGE ========*/
 
 /*======= MAIN CONTENT ========*/
 main.csapatok-container {
-    padding-top: 4vw;
-    padding-left: 3vw;
+    padding-top: 10px; /* 4vw -> 60px */
+    padding-left: 40px; /* 3vw -> 40px */
     margin: 0; /* Remove auto margin to align left */
     text-align: left; /* Align text to the left */
 }
 
-.edzok-section{
-    margin-bottom: 2vw;
+.edzok-section {
+    margin-bottom: 30px; /* 2vw -> 30px */
 }
 
-.poszt-section{
-    margin-bottom: 1vq;
+.poszt-section {
+    margin-bottom: 15px; /* 1vq -> 15px */
 }
+
 .edzok-section, .poszt-section {
     text-align: left; /* Align section content to the left */
 }
 
 .edzok-section h2, .poszt-section h2 {
-    font-size: 1.7vw;
+    font-size: 25px; /* 1.7vw -> 25px */
     color: rgb(255, 37, 37);
-    margin-bottom: 0.5vw;
+    margin-bottom: 8px; /* 0.5vw -> 8px */
     display: inline-block; /* Make the title inline-block */
     margin-right: 10px; /* Add space between the title and names */
 }
 
 .edzok-section p, .poszt-section p {
-    font-size: 1.4vw;
+    font-size: 20px; /* 1.4vw -> 20px */
     color: #D9D9D9;
     line-height: 1.6;
     text-align: left; /* Align paragraphs to the left */
@@ -115,4 +123,31 @@ main.csapatok-container {
 
 .poszt {
     color: #FF6B6B;
+}
+/*======= NAVIGATION ========*/
+nav {
+    margin-top: 10px;
+    background-color: #161A1D; /* A nav konténer háttérszíne */
+    padding: 10px 40px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Balra igazítás */
+}
+
+
+
+nav ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s ease;
+    background-color: darkred; /* Piros háttér a linkeknek */
+    padding: 8px 16px; /* Belső térköz a szöveg körül */
+    border-radius: 20px; /* Lekerekített sarkok */
+    display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
 }
