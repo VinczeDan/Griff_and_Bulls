@@ -1,0 +1,107 @@
+/*======= HEADER ========*/
+/* Default header styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  padding: 20px; /* 1.5% -> 20px */
+  border-bottom: 1px solid #ddd; /* 0.1vw -> 1px */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Smaller header when scrolled */
+header.scrolled {
+  padding: 8px; /* 0.5% -> 8px */
+}
+
+header.scrolled img {
+  height: 40px; /* 4vw -> 40px */
+}
+
+header.scrolled h1 {
+  font-size: 30px; /* 3vw -> 30px */
+}
+
+header.scrolled p {
+  font-size: 15px; /* 1.5vw -> 15px */
+  padding-left: 50px; /* Keep as px */
+}
+
+/* Adjust body padding to account for smaller header */
+body {
+  padding-top: 80px; /* 8vw -> 80px */
+}
+
+body {
+  padding-top: 100px; /* 10vw -> 100px */
+  background-color: #161a1d;
+}
+
+header img {
+  height: 60px; /* 6vw -> 60px */
+  margin: 0 10px; /* 1% -> 10px */
+}
+
+header h1 {
+  font-size: 40px; /* 4vw -> 40px */
+  color: #333;
+  margin: 0;
+}
+
+header p {
+  font-size: 20px; /* 2vw -> 20px */
+  color: #666;
+  font-style: italic;
+  padding-left: 100px; /* Keep as px */
+}
+
+.gab_feher_bal,
+.gab_feher_jobb {
+  position: absolute;
+  height: 60px; /* 6vw -> 60px */
+  margin-left: 15px; /* 1.5% -> 15px */
+  margin-right: 15px; /* 1.5% -> 15px */
+}
+
+.gab_feher_bal {
+  left: 0;
+}
+
+.gab_feher_jobb {
+  right: 0;
+  max-width: 100%; /* A kép ne lógjon ki az oldalról */
+  height: auto; /* A kép arányai megmaradjanak */
+}
+/*======= HEADER VÉGE ========*/
+.csapatok-lista {
+  margin-top: 40px;
+  list-style-type: none;
+  padding: 0;
+  justify-content: flex-start; /* Balra igazítás */
+
+  list-style-type: none; /* Eltávolítja a lista eleje lévő pontokat */
+  padding: 0; /* Eltávolítja a belső térközt */
+  margin: 0; /* Eltávolítja a külső térközt */
+}
+
+.csapatok-lista li {
+  display: block; /* A li elemek egymás alatt jelennek meg */
+  margin-bottom: 10px; /* Térköz a li elemek között */
+}
+
+.csapatok-lista li a {
+  color: whitesmoke;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s ease;
+  background-color: darkred; /* Piros háttér a linkeknek */
+  padding: 8px 16px; /* Belső térköz a szöveg körül */
+  border-radius: 20px; /* Lekerekített sarkok */
+}
