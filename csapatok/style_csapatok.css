@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /*======= HEADER ========*/
 /* Default header styles */
 header {
@@ -81,6 +80,26 @@ header p {
 
 .gab_feher_jobb {
   right: 0;
+}
+
+/* Media query for screens smaller than 520px */
+@media (max-width: 520px) {
+  .gab_feher_bal,
+  .gab_feher_jobb {
+    display: none; /* Elrejti a képeket */
+  }
+
+  header p {
+    padding-left: 20px; /* Csökkenti a paddingot, hogy jobban illeszkedjen */
+  }
+
+  header h1 {
+    font-size: 30px; /* Kisebb cím mérete */
+  }
+
+  header p {
+    font-size: 16px; /* Kisebb alcím mérete */
+  }
 }
 /*======= HEADER VÉGE ========*/
 
