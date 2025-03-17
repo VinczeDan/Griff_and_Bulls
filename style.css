@@ -224,7 +224,7 @@ nav ul li.dropdown {
 }
 /* Reszponzív módosítások */
 @media (max-width: 1200px) {
-  nav{
+  nav {
     margin-top: 10px;
   }
   .hamburger {
@@ -275,24 +275,28 @@ nav ul li.dropdown {
   body.menu-open {
     overflow: hidden;
   }
-
 }
 
 /*======= NAV VÉGE ========*/
-
 
 /*======= TABELLA ========*/
 .eredmenyek_felirat,
 .hirek_felirat,
 .kovetkezo_meccseing_felirat {
   color: #d9d9d9;
-  margin: 0 15px; /* 1.5% -> 15px */
-  font-size: 40px; /* 4vw -> 40px */
+  margin: 0 25px; /* 1.5% -> 15px */
+  font-size: 30px; /* 4vw -> 40px */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-hr {
+.hirek_alatt_hr {
   margin: 15px; /* 1.5% -> 15px */
+}
+
+.eredmenyek_alatt_hr,
+.kovetkezo_meccs_alatt_hr {
+  margin-left: 25px;
+  margin-right: -25px;
 }
 
 .eredmenyek_korosztaly {
@@ -344,6 +348,20 @@ hr {
     margin: 0; /* Nincs margó */
     padding: 0 18px; /* Padding a szélek mentén */
   }
+  .eredmenyek_alatt_hr,
+  .kovetkezo_meccs_alatt_hr {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .eredmenyek_felirat,
+  .kovetkezo_meccseing_felirat {
+    color: #d9d9d9;
+    margin: 0;
+    font-size: 30px; /* 4vw -> 40px */
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
 
   .eredmenyek_csik {
     margin: 10px 0; /* Felső és alsó margó */
@@ -364,6 +382,7 @@ hr {
   align-items: center;
   max-width: 80%;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .hirek_section {
@@ -376,8 +395,6 @@ hr {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 0.3vw 0.6vw -> 3px 6px */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .hirek_section img {
   width: 100px; /* 10vw -> 100px */
@@ -526,8 +543,6 @@ html {
   color: whitesmoke;
 }
 
-
-
 .jelenunk_container h2,
 .rovid_cel_container h2,
 .hosszu_cel_container h2 {
@@ -586,13 +601,11 @@ html {
   .hosszu_cel_container p {
     font-size: 1rem;
   }
-}   
+}
 
 /*======= RÓLUNK VÉGE ========*/
 
-
-
-
+/*======= CSAPATOK HTML ========*/
 .csapatok-lista {
   margin-top: 40px;
   list-style-type: none;
@@ -600,7 +613,7 @@ html {
   justify-content: flex-start; /* Balra igazítás */
 
   list-style-type: none; /* Eltávolítja a lista eleje lévő pontokat */
-  padding:20px 30px; /* Eltávolítja a belső térközt */
+  padding: 20px 30px; /* Eltávolítja a belső térközt */
   margin: 0; /* Eltávolítja a külső térközt */
 }
 
@@ -619,3 +632,4 @@ html {
   padding: 8px 16px; /* Belső térköz a szöveg körül */
   border-radius: 20px; /* Lekerekített sarkok */
 }
+/*======= CSAPATOK HTML VÉGE ========*/

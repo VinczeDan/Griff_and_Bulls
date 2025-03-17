@@ -1,9 +1,18 @@
 // Hamburger menü megnyitása/zárása
 function toggleMenu() {
   const navLinks = document.querySelector(".nav-links");
-  const hamburger = document.querySelector(".hamburger");
+  const overlay = document.getElementById("overlay");
+  const body = document.body;
+
   navLinks.classList.toggle("active");
-  hamburger.classList.toggle("active");
+  overlay.classList.toggle("active");
+
+  // Görgetés letiltása/engedélyezése
+  if (navLinks.classList.contains("active")) {
+    body.classList.add("menu-open");
+  } else {
+    body.classList.remove("menu-open");
+  }
 }
 
 // Legördülő menü megnyitása/zárása
@@ -47,19 +56,15 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// Menüpontokra kattintáskor bezárja a menüt és engedélyezi a görgetést
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    const navLinks = document.querySelector(".nav-links");
+    const overlay = document.getElementById("overlay");
+    const body = document.body;
 
-function toggleMenu() {
-  const navLinks = document.querySelector(".nav-links");
-  const overlay = document.getElementById("overlay");
-  const body = document.body;
-
-  navLinks.classList.toggle("active");
-  overlay.classList.toggle("active");
-
-  // Görgetés letiltása/engedélyezése
-  if (navLinks.classList.contains("active")) {
-    body.classList.add("menu-open");
-  } else {
+    navLinks.classList.remove("active");
+    overlay.classList.remove("active");
     body.classList.remove("menu-open");
-  }
-}
+  });
+});
