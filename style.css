@@ -285,7 +285,7 @@ nav ul li.dropdown {
 .kovetkezo_meccseing_felirat {
   color: #d9d9d9;
   margin: 0 25px; /* 1.5% -> 15px */
-  font-size: 30px; /* 4vw -> 40px */
+  font-size: 40px; /* 4vw -> 40px */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -338,6 +338,8 @@ nav ul li.dropdown {
   margin-left: auto;
   text-align: right;
 }
+
+
 
 /* Reszponzív módosítások 680px alatt */
 @media (max-width: 860px) {

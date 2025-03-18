@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 /*======= HEADER ========*/
 /* Default header styles */
 header {
@@ -97,6 +104,7 @@ header p {
   }
 }
 /*======= HEADER VÉGE ========*/
+
 .csapatok-lista {
   margin-top: 40px;
   list-style-type: none;
@@ -104,7 +112,7 @@ header p {
   justify-content: flex-start; /* Balra igazítás */
 
   list-style-type: none; /* Eltávolítja a lista eleje lévő pontokat */
-  padding: 0; /* Eltávolítja a belső térközt */
+  padding: 20px 30px; /* Eltávolítja a belső térközt */
   margin: 0; /* Eltávolítja a külső térközt */
 }
 
@@ -122,4 +130,32 @@ header p {
   background-color: darkred; /* Piros háttér a linkeknek */
   padding: 8px 16px; /* Belső térköz a szöveg körül */
   border-radius: 20px; /* Lekerekített sarkok */
+}
+/*======= CSAPATOK HTML VÉGE ========*/
+
+/*======= NAVIGATION ========*/
+nav {
+    margin-top: 10px;
+    background-color: #161A1D; /* A nav konténer háttérszíne */
+    padding: 10px 40px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* Balra igazítás */
+    gap: 20px; /* Távolság a gombok között */
+}
+
+nav ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s ease;
+    background-color: darkred; /* Piros háttér a linkeknek */
+    padding: 8px 16px; /* Belső térköz a szöveg körül */
+    border-radius: 20px; /* Lekerekített sarkok */
+    display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
 }
