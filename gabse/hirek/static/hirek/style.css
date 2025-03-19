@@ -339,10 +339,8 @@ nav ul li.dropdown {
   text-align: right;
 }
 
-
-
 /* Reszponzív módosítások 680px alatt */
-@media (max-width: 860px) {
+@media (max-width: 890px) {
   .eredmenyek_div,
   .kovetkezo_meccsek_div {
     width: 100%; /* Teljes szélességű legyen */
@@ -416,7 +414,7 @@ nav ul li.dropdown {
   margin: 0 0 8px 0; /* 0.8% -> 8px */
 }
 
-@media (max-width: 860px) {
+@media (max-width: 893px) {
   .sections-container {
     flex-direction: column;
     gap: 10%;

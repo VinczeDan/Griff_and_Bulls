@@ -1,20 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Griff & Bulls</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="{% static 'hirek/style.css' %}" />
+    <script src="{% static 'hirek/script.js' %}"></script>
   </head>
   <body>
     <header>
-      <img class="gab_feher_bal" src="gab_feher.png" alt="fehet gab kep" />
+      <img
+        class="gab_feher_bal"
+        src="{% static 'hirek/gab_feher.png' %}"
+        alt="GAB Fehér"
+      />
       <div class="header-text">
         <h1>Griff and Bulls</h1>
         <p>Egyesület egy kicsit másképp...</p>
       </div>
-      <img class="gab_feher_jobb" src="gab_feher.png" alt="fehet gab kep" />
+      <img
+        class="gab_feher_jobb"
+        src="{% static 'hirek/gab_feher.png' %}"
+        alt="GAB Fehér"
+      />
     </header>
     <nav>
       <div class="hamburger" onclick="toggleMenu()">
@@ -26,13 +35,11 @@
         <li><a href="index.html">Kezdőlap</a></li>
         <li><a href="#rolunk">Rólunk</a></li>
         <li class="dropdown">
-          <a onclick="window.location.href='csapatok.html'"
-            >Csapataink</a
-          >
+          <a onclick="window.location.href='csapatok.html'">Csapataink</a>
           <ul class="dropdown-menu">
             <li><a href="csapatok/felnott.html">Felnőtt BLSZ III.</a></li>
             <li><a href="csapatok/u19.html">U19</a></li>
-            <li><a href="https://youtube.com">U17</a></li>
+            <li><a href="csapatok/u17.html">U17</a></li>
             <li><a href="csapatok/u16.html">U16</a></li>
             <li><a href="csapatok/u15.html">U15</a></li>
             <li><a href="csapatok/u11.html">U11</a></li>
@@ -50,27 +57,36 @@
     <main>
       <div class="egesz-hirek">
         <h1 class="hirek_felirat">Híreink</h1>
-        <hr class="hirek_alatt_hr"/>
+        <hr class="hirek_alatt_hr" />
         <div class="sections-container">
           <section class="hirek_section">
-            <img src="GAB_piros_jo.jpg" alt="Piros gab kep" />
+            <img
+              src="{% static 'hirek/GAB_piros_jo.jpg' %}"
+              alt="Piros gab kep"
+            />
             <h3 class="hír_cim">Új kapusedzőt igazoltunk</h3>
           </section>
 
           <section class="hirek_section">
-            <img src="GAB_piros_jo.jpg" alt="Piros gab kep" />
+            <img
+              src="{% static 'hirek/GAB_piros_jo.jpg' %}"
+              alt="Piros gab kep"
+            />
             <h3 class="hír_cim">Erönléti edzőt igazoltunk</h3>
           </section>
 
           <section class="hirek_section">
-            <img src="GAB_piros_jo.jpg" alt="Piros gab kep" />
+            <img
+              src="{% static 'hirek/GAB_piros_jo.jpg' %}"
+              alt="Piros gab kep"
+            />
             <h3 class="hír_cim">ÖREGFIÚK!</h3>
           </section>
         </div>
       </div>
       <div class="eredmenyek_div">
         <h1 class="eredmenyek_felirat">Eredmények</h1>
-        <hr class="eredmenyek_alatt_hr"/>
+        <hr class="eredmenyek_alatt_hr" />
         <div class="eredmenyek_csik">
           <div class="eredmenyek_bal">
             <h2 class="eredmenyek_korosztaly">U19</h2>

@@ -1,19 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="hu">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Griff and Bulls</title>
-    <link rel="stylesheet" href="edzok.css" />
+    <link rel="stylesheet" href="{% static 'hirek/edzok.css' %}" />
   </head>
   <body>
     <header>
-      <img class="gab_feher_bal" src="gab_feher.png" alt="feher gab kep" />
+    <img class="gab_feher_bal" src="{% static 'hirek/gab_feher.png' %}" alt="GAB Fehér">
       <div class="header-text">
         <h1>Griff and Bulls</h1>
         <p>Egyesület egy kicsit másképp...</p>
       </div>
-      <img class="gab_feher_jobb" src="gab_feher.png" alt="feher gab kep" />
+    <img class="gab_feher_jobb" src="{% static 'hirek/gab_feher.png' %}" alt="GAB Fehér">
     </header>
     <nav>
       <ul>
