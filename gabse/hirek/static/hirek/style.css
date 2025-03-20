@@ -287,6 +287,9 @@ nav ul li.dropdown {
   margin: 0 25px; /* 1.5% -> 15px */
   font-size: 40px; /* 4vw -> 40px */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  white-space: nowrap; /* A szöveg ne törjön sorba */
+  overflow: hidden; /* Túlcsorduló szöveg elrejtése */
+  text-overflow: ellipsis; /* Túl hosszú szöveg esetén "..." jelzés */
 }
 
 .hirek_alatt_hr {
@@ -339,8 +342,8 @@ nav ul li.dropdown {
   text-align: right;
 }
 
-/* Reszponzív módosítások 680px alatt */
-@media (max-width: 890px) {
+/* Reszponzív módosítások 1200px alatt */
+@media (max-width: 1200px) {
   .eredmenyek_div,
   .kovetkezo_meccsek_div {
     width: 100%; /* Teljes szélességű legyen */
@@ -361,6 +364,9 @@ nav ul li.dropdown {
     font-size: 30px; /* 4vw -> 40px */
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
+    white-space: nowrap; /* A szöveg ne törjön sorba */
+    overflow: hidden; /* Túlcsorduló szöveg elrejtése */
+    text-overflow: ellipsis; /* Túl hosszú szöveg esetén "..." jelzés */
   }
 
   .eredmenyek_csik {
