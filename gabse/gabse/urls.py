@@ -1,46 +1,44 @@
-"""
-URL configuration for gabse project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+# gabse/urls.py
 from django.contrib import admin
-from django.urls import path
-from hirek.views import fooldal
-from hirek.views import edzok
-from hirek.views import csapataink
-from hirek.views import u19
-from hirek.views import u17
-from hirek.views import u16
-from hirek.views import u15
-from hirek.views import u11
-from hirek.views import felnott
-from hirek.views import oregfiuk
-from hirek.views import oldboys
+from django.urls import path, include
+from hirek.views import (
+    fooldal, 
+    edzok, 
+    csapataink, 
+    u19, 
+    u17, 
+    u16, 
+    u15, 
+    u11, 
+    felnott, 
+    oregfiuk, 
+    oldboys,
+    aktualis,
+    palyazat,
+)
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', fooldal),
-    path("index.html", fooldal),
-    path("edzok.html", edzok),
-    path("csapatok.html", csapataink),
-    path("csapatok/u19.html", u19),
-    path("csapatok/u17.html", u17),
-    path("csapatok/u16.html", u16),
-    path("csapatok/u15.html", u15),
-    path("csapatok/u11.html", u11),
-    path("csapatok/felnott.html", felnott),
-    path("csapatok/oldboys.html", oldboys),
-    path("csapatok/oregfiuk.html", oregfiuk),
-]
+    
+    # Hírekhez kapcsolódó útvonalak
+    path('', fooldal, name='fooldal'),
+    path('hirek/', include('hirek.urls')),
+    
+    # Meglévő útvonalak megtartása
+    path("index.html", fooldal, name='index'),
+    path("edzok.html", edzok, name='edzok'),
+    path("csapatok.html", csapataink, name='csapatok'),
+    path("csapatok/u19.html", u19, name='u19'),
+    path("csapatok/u17.html", u17, name='u17'),
+    path("csapatok/u16.html", u16, name='u16'),
+    path("csapatok/u15.html", u15, name='u15'),
+    path("csapatok/u11.html", u11, name='u11'),
+    path("csapatok/felnott.html", felnott, name='felnott'),
+    path("csapatok/oldboys.html", oldboys, name='oldboys'),
+    path("csapatok/oregfiuk.html", oregfiuk, name='oregfiuk'),
+    path("aktualis.html", aktualis, name='aktualis'),
+    path('palyazat.html', palyazat, name='palyazat'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  

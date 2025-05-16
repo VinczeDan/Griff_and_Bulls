@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*======= HEADER ========*/
+/* Default header styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f4;
+  padding: 20px; /* 1.5% -> 20px */
+  border-bottom: 1px solid #ddd; /* 0.1vw -> 1px */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Smaller header when scrolled */
+header.scrolled {
+  padding: 8px; /* 0.5% -> 8px */
+}
+
+header.scrolled img {
+  height: 40px; /* 4vw -> 40px */
+}
+
+header.scrolled h1 {
+  font-size: 30px; /* 3vw -> 30px */
+}
+
+header.scrolled p {
+  font-size: 15px; /* 1.5vw -> 15px */
+  padding-left: 50px; /* Keep as px */
+}
+
+/* Adjust body padding to account for smaller header */
+body {
+  padding-top: 80px; /* 8vw -> 80px */
+}
+
+body {
+  padding-top: 100px; /* 10vw -> 100px */
+  background-color: #161a1d;
+}
+
+header img {
+  height: 60px; /* 6vw -> 60px */
+  margin: 0 10px; /* 1% -> 10px */
+}
+
+header h1 {
+  font-size: 40px; /* 4vw -> 40px */
+  color: #333;
+  margin: 0;
+}
+
+header p {
+  font-size: 20px; /* 2vw -> 20px */
+  color: #666;
+  font-style: italic;
+  padding-left: 100px; /* Keep as px */
+}
+
+.gab_feher_bal,
+.gab_feher_jobb {
+  position: absolute;
+  height: 60px; /* 6vw -> 60px */
+  margin-left: 15px; /* 1.5% -> 15px */
+  margin-right: 15px; /* 1.5% -> 15px */
+}
+
+.gab_feher_bal {
+  left: 0;
+}
+
+.gab_feher_jobb {
+  right: 0;
+}
+
+/* Media query for screens smaller than 520px */
+@media (max-width: 520px) {
+  .gab_feher_bal,
+  .gab_feher_jobb {
+    display: none; /* Elrejti a képeket */
+  }
+
+  header p {
+    padding-left: 20px; /* Csökkenti a paddingot, hogy jobban illeszkedjen */
+  }
+
+  header h1 {
+    font-size: 30px; /* Kisebb cím mérete */
+  }
+
+  header p {
+    font-size: 16px; /* Kisebb alcím mérete */
+  }
+}

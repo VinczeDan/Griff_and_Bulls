@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  
+}
+
+main {
+  padding: 20px;
+  background-color: #161a1d;
+}
+
+.egesz_hirek {
+  margin: 10px;
+}
+
+.hirek_tartalom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 180px;
+}
+
+.side-menu {
+  flex: 1;
+  max-width: 480px;
+  padding: 10px;
+  background-color: #161a1d;
+  border-radius: 5px;
+}
+
+.kis_hir {
+  padding: 10px 0;
+}
+
+.tobbi_hir_cim {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.datum {
+  margin-top: 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: gray;
+  margin: 10px 0;
+}
+
+.kedvcsinalo {
+  font-size: 15px;
+  margin-top: 10px;
+  color:whitesmoke;
+}
+
+.eppen_olvasott_hir {
+  flex: 2;
+  padding: 10px;
+  background-color: #161a1d;
+  border-radius: 5px;
+}
+
+.hir_kep {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.szoveg {
+  color:whitesmoke;
+  margin-top: 20px;
+}
+
+.olvasott_hir_cim {
+  margin: 20px 0;
+  font-size: 28px;
+  color: whitesmoke;
+}
+
+h3 {
+  color: whitesmoke;
+}
+
+@media (max-width: 1200px) {
+  .hirek_tartalom {
+    margin: 0 50px;
+  }
+}
+
+@media (max-width: 950px) {
+  .hirek_tartalom {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .eppen_olvasott_hir {
+    order: -1;
+    margin-bottom: 30px;
+  }
+
+  .side-menu,
+  .eppen_olvasott_hir {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .hir_kep {
+    width: 100%;
+  }
+}

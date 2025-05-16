@@ -5,8 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Griff & Bulls</title>
-    <link rel="stylesheet" href="{% static 'hirek/style.css' %}" />
-    <script src="{% static 'hirek/script.js' %}"defer></script>
+    <link rel="stylesheet" href="{% static 'hirek/fooldal_hirek.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/nav_bar.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/rolunk.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/tabella.css' %}" />
+    <script src="{% static 'hirek/script.js' %}" defer></script>
   </head>
   <body>
     <header>
@@ -48,7 +53,7 @@
           </ul>
         </li>
         <li><a href="edzok.html">Edzőink</a></li>
-        <li><a href="#">Pályázat</a></li>
+        <li><a href="palyazat.html">Pályzat</a></li>
         <li><a href="#kapcsolat">Kapcsolat</a></li>
       </ul>
     </nav>
@@ -59,122 +64,56 @@
         <h1 class="hirek_felirat">Híreink</h1>
         <hr class="hirek_alatt_hr" />
         <div class="sections-container">
-          <section class="hirek_section">
+          {% for hir in hirek %}
+          <a href="{% url 'hir_reszletek' hir.slug %}" class="hirek_section">
             <img
               src="{% static 'hirek/GAB_piros_jo.jpg' %}"
-              alt="Piros gab kep"
+              alt="Alapértelmezett kép"
             />
-            <h3 class="hír_cim">Új kapusedzőt igazoltunk</h3>
-          </section>
-
-          <section class="hirek_section">
-            <img
-              src="{% static 'hirek/GAB_piros_jo.jpg' %}"
-              alt="Piros gab kep"
-            />
-            <h3 class="hír_cim">Erönléti edzőt igazoltunk</h3>
-          </section>
-
-          <section class="hirek_section">
-            <img
-              src="{% static 'hirek/GAB_piros_jo.jpg' %}"
-              alt="Piros gab kep"
-            />
-            <h3 class="hír_cim">ÖREGFIÚK!</h3>
-          </section>
-        </div>
-      </div>
-      <div class="eredmenyek_div">
-        <h1 class="eredmenyek_felirat">Eredmények</h1>
-        <hr class="eredmenyek_alatt_hr" />
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U19</h2>
-            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U17</h2>
-            <h2 class="eredmenyek_meccs">real-barca</h2>
-            <div class="eredmenyek_bal"></div>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U17</h2>
-            <h2 class="eredmenyek_meccs">real-barca</h2>
-            <div class="eredmenyek_bal"></div>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U17</h2>
-            <h2 class="eredmenyek_meccs">real-barca</h2>
-            <div class="eredmenyek_bal"></div>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U17</h2>
-            <h2 class="eredmenyek_meccs">real-barca</h2>
-            <div class="eredmenyek_bal"></div>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-      </div>
-      <div class="kovetkezo_meccsek_div">
-        <h1 class="kovetkezo_meccseing_felirat">Következő meccseink</h1>
-        <hr class="kovetkezo_meccs_alatt_hr" />
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U19</h2>
-            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U19</h2>
-            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U19</h2>
-            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U19</h2>
-            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
-        </div>
-
-        <div class="eredmenyek_csik">
-          <div class="eredmenyek_bal">
-            <h2 class="eredmenyek_korosztaly">U19</h2>
-            <h2 class="eredmenyek_meccs">Ute 2-1 Griff & Bulls</h2>
-          </div>
-          <p class="meccs_idopont">2025.01.10</p>
+            <div class="text-content">
+              <h3 class="hír_cim">{{ hir.cim }}</h3>
+              <div class="datum">{{ hir.letrehozva|date:"Y.m.d" }}</div>
+            </div>
+          </a>
+          {% endfor %}
         </div>
       </div>
 
+      <!-- Csak az eredmények és következő meccsek rész cseréljük ki -->
+      <div class="tartalom_kontener">
+        <div class="eredmenyek_div">
+          <h1 class="eredmenyek_felirat">Eredmények</h1>
+          <hr class="eredmenyek_alatt_hr" />
+          {% for meccs in eredmenyek %}
+          <div class="eredmenyek_csik">
+            <div class="eredmenyek_bal">
+              <h2 class="eredmenyek_korosztaly">{{ meccs.korosztaly }}</h2>
+              <h2 class="eredmenyek_meccs">
+                {{ meccs.hazai_csapat }} vs {{ meccs.vendeg_csapat }}
+              </h2>
+              <h2 class="eredmenyek_eredmeny">{{ meccs.eredmeny }}</h2>
+            </div>
+            <p class="meccs_idopont">{{ meccs.datum|date:"Y.m.d" }}</p>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="kovetkezo_meccsek_div">
+          <h1 class="kovetkezo_meccseing_felirat">Következő meccseink</h1>
+          <hr class="kovetkezo_meccs_alatt_hr" />
+          {% for meccs in kovetkezo_meccsek %}
+          <div class="eredmenyek_csik">
+            <div class="eredmenyek_bal">
+              <h2 class="eredmenyek_korosztaly">{{ meccs.korosztaly }}</h2>
+              <h2 class="eredmenyek_meccs">
+                {{ meccs.hazai_csapat }} vs {{ meccs.vendeg_csapat }}
+              </h2>
+            </div>
+            <p class="meccs_idopont">{{ meccs.datum|date:"Y.m.d" }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
       <div class="rolunk_container" , id="rolunk">
         <h1 class="rolunk_felirat">Rólunk</h1>
         <div class="csempek_div">
@@ -244,10 +183,9 @@
 
         <div class="footer-links">
           <h3>Fontos linkek</h3>
-          <a href="#">Felhasználási feltételek</a>
+          <a href="palyazat.html">Pályzati dokumentumok</a>
         </div>
       </div>
-
       <p class="footer-copy">
         © 2025 Griff & Bulls SE - Minden jog fenntartva.
       </p>

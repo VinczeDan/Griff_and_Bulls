@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hirek</title>
+    <link rel="stylesheet" href="{% static 'hirek/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/hirek_oldal.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/footer.css' %}" />
+    <script src="{% static 'hirek/script.js' %}" defer></script>
+    <script src="{% static 'hirek/hirek.js' %}" defer></script>
+  </head>
+  <body>
+    <header>
+      <img
+        class="gab_feher_bal"
+        src="{% static 'hirek/gab_feher.png' %}"
+        alt="GAB Fehér"
+      />
+      <div class="header-text">
+        <h1>Griff and Bulls</h1>
+        <p>Egyesület egy kicsit másképp...</p>
+      </div>
+      <img
+        class="gab_feher_jobb"
+        src="{% static 'hirek/gab_feher.png' %}"
+        alt="GAB Fehér"
+      />
+    </header>
+    <main>
+      <section class="egesz hirek">
+        <div class="hirek_tartalom">
+          <div class="side-menu">
+            <ul>
+              {% for hir in legfrissebb_hirek %}
+              <article class="kis_hir">
+                <a
+                  href="{% url 'hir_reszletek' hir.slug %}"
+                  class="tobbi_hir_cim"
+                  >{{ hir.cim }}</a
+                >
+                <div class="datum">{{ hir.letrehozva|date:"Y.m.d" }}</div>
+                <div class="kedvcsinalo">
+                  {{ hir.tartalom|truncatewords:20 }}
+                </div>
+              </article>
+              <hr />
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="eppen_olvasott_hir">
+            <article>
+              <h3>Hírek</h3>
+              <hr />
+              <div class="olvasott_hir_cim">{{ hir.cim }}</div>
+              {% if hir.kiemelt_kep %}
+              <img
+                class="hir_kep"
+                src="{{ hir.kiemelt_kep.url }}"
+                alt="{{ hir.cim }}"
+              />
+              {% endif %}
+              <div class="szoveg">{{ hir.tartalom|linebreaks }}</div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3>Griff & Bulls SE</h3>
+          <p><strong>Cím:</strong> 1234 Budapest, Sport utca 5.</p>
+          <p><strong>Telefon:</strong> +36 30 123 4567</p>
+          <p><strong>E-mail:</strong> info@griffbulls.hu</p>
+        </div>
+        <section class="footer_kapcsolat," id="kapcsolat">
+          <div class="footer-socials">
+            <h3>Kövess minket!</h3>
+            <a
+              href="https://www.facebook.com/p/Griff-Bulls-SE-100057331514748/"
+              target="_blank"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/griff_and_bulls_se?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </section>
+
+        <div class="footer-links">
+          <h3>Fontos linkek</h3>
+          <a href="palyazat.html">Pályzati dokumentumok</a>
+        </div>
+      </div>
+
+      <p class="footer-copy">
+        © 2025 Griff & Bulls SE - Minden jog fenntartva.
+      </p>
+    </footer>
+  </body>
+</html>

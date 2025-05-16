@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pályázat</title>
+    <link rel="stylesheet" href="{% static 'hirek/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/palyazat.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/header.css' %}" />
+  </head>
+  <body>
+    <header>
+      <img
+        class="gab_feher_bal"
+        src="{% static 'hirek/gab_feher.png' %}"
+        alt="GAB Fehér"
+      />
+      <div class="header-text">
+        <h1>Griff and Bulls</h1>
+        <p>Egyesület egy kicsit másképp...</p>
+      </div>
+      <img
+        class="gab_feher_jobb"
+        src="{% static 'hirek/gab_feher.png' %}"
+        alt="GAB Fehér"
+      />
+    </header>
+    <main>
+      <!-- PDF Display Section -->
+      <section class="pdf-display-section">
+        <h2 class="pdf-display-title">Pályázati dokumentumok</h2>
+        <div class="pdf-display-container">
+          {% for pdf in pdfs %}
+          <div class="pdf-item">
+            <h3>{{ pdf.title }}</h3>
+            <a href="{{ pdf.file.url }}" target="_blank" class="pdf-link">
+              <i class="fas fa-file-pdf"></i> Letöltés
+            </a>
+            <small>Feltöltve: {{ pdf.uploaded_at|date:"Y.m.d H:i" }}</small>
+          </div>
+          {% empty %}
+          <p class="no-pdfs">
+            Jelenleg nincsenek elérhető pályázati dokumentumok.
+          </p>
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3>Griff & Bulls SE</h3>
+          <p><strong>Cím:</strong> 1234 Budapest, Sport utca 5.</p>
+          <p><strong>Telefon:</strong> +36 30 123 4567</p>
+          <p><strong>E-mail:</strong> info@griffbulls.hu</p>
+        </div>
+        <section class="footer_kapcsolat," id="kapcsolat">
+          <div class="footer-socials">
+            <h3>Kövess minket!</h3>
+            <a
+              href="https://www.facebook.com/p/Griff-Bulls-SE-100057331514748/"
+              target="_blank"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/griff_and_bulls_se?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </section>
+
+        <div class="footer-links">
+          <h3>Fontos linkek</h3>
+          <a href="palyazat.html">Pályzati dokumentumok</a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        © 2025 Griff & Bulls SE - Minden jog fenntartva.
+      </p>
+    </footer>
+  </body>
+</html>

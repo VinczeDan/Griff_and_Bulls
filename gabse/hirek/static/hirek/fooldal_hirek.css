@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.sections-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px; /* 1.5% -> 15px */
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.hirek_section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* 1.5% -> 15px */
+  background-color: whitesmoke;
+  border-radius: 8px; /* 0.8vw -> 8px */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 0.3vw 0.6vw -> 3px 6px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.hirek_section img {
+  width: 100px; /* 10vw -> 100px */
+  padding: 3%; /* 3% -> 30px */
+  height: auto;
+  border-radius: 20%; /* 2vw -> 20px */
+}
+
+.text-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hír_cim {
+  font-size: 20px; /* 2.3vw -> 23px */
+  color: #333;
+  margin: 0 0 20px 0; /* 0.8% -> 8px */
+}
+.datum {
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+}
+@media (max-width: 950px) {
+  .sections-container {
+    flex-direction: column;
+    gap: 10%;
+  }
+
+  
+  .hirek_section {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .hirek_section img {
+    width: 30%; /* 15vw -> 150px */
+    border-radius: 20%;
+  }
+
+  .hír_cim {
+    font-size: 3.5vw; /* 3.5vw -> 35px */
+  }
+}

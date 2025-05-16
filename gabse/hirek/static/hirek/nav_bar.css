@@ -1,0 +1,171 @@
+
+main,
+nav {
+  background-color: #161a1d;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1.5% 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  background-color: red;
+  border-radius: 2vw;
+  padding: 0.5% 3%;
+  width: 80%;
+}
+
+nav ul li {
+  padding: 0.8% 2.5%;
+  font-weight: bold;
+  transition: 0.3s;
+  color: white;
+}
+
+.nav-links li {
+  padding: 0.8% 3.5%;
+  font-weight: bold;
+  transition: 0.3s;
+  color: white;
+  border-bottom: none;
+}
+
+.nav-links li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  border-bottom: none;
+}
+
+.dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+nav ul li:hover {
+  background-color: darkred;
+  border-radius: 1.5vw;
+  cursor: pointer;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: darkred;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 1.5vw;
+  width: 12vw;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 5%;
+}
+
+.dropdown-menu li a {
+  color: white;
+  padding: 0.5%;
+  display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+.dropdown-menu li:hover {
+  background-color: crimson;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+/* Reszponzív módosítások */
+@media (max-width: 1200px) {
+  nav {
+    margin-top: 10px;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 180px;
+    left: 0;
+    z-index: 1000; /* Biztosítja, hogy a nav-links az overlay felett legyen */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: left;
+    padding: 15px;
+    display: block;
+  }
+
+  /* A dropdown menü mobilnézetben eltávolítva */
+  .dropdown .dropdown-menu {
+    display: none !important;
+  }
+
+  .dropdown a {
+    pointer-events: auto;
+  }
+
+  /* A "Csapatok" menüpont kattintható a hamburger menüben */
+  .dropdown a[onclick] {
+    pointer-events: auto;
+  }
+
+  /* Overlay megjelenítése, ha a menü aktív */
+  .nav-links.active + .overlay {
+    display: block;
+  }
+
+  /* Görgetés letiltása, ha a menü aktív */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
