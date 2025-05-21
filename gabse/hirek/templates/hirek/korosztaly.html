@@ -4,71 +4,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Griff & Bulls - Csapatok</title>
     <link rel="stylesheet" href="{% static 'hirek/style_csapatok.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/footer.css' %}" />
     <script src="{% static 'hirek/script.js' %}"></script>
   </head>
   <body>
     <header>
-      <img
-        class="gab_feher_bal"
-        src="{% static 'hirek/gab_feher.png' %}"
-        alt="GAB Fehér"
-      />
+    <img class="gab_feher_bal" src="{% static 'hirek/gab_feher.png' %}" alt="GAB Fehér">
       <div class="header-text">
+        <h1>{{ korosztaly }}</h1>
         <h1>Griff and Bulls</h1>
         <p>Egyesület egy kicsit másképp...</p>
       </div>
-      <img
-        class="gab_feher_jobb"
-        src="{% static 'hirek/gab_feher.png' %}"
-        alt="GAB Fehér"
-      />
+    <img class="gab_feher_jobb" src="{% static 'hirek/gab_feher.png' %}" alt="GAB Fehér">
     </header>
 
     <nav>
       <ul>
-        <li><a href="../index.html">Vissza a főoldalra</a></li>
-        <li><a href="../csapatok.html">Többi csapat</a></li>
+        <li><a href="{% url 'fooldal' %}">Vissza a főoldalra</a></li>
+        <li><a href="{% url 'csapatok' %}">Többi csapat</a></li>
       </ul>
     </nav>
     <main class="csapatok-container">
       <div class="edzok-section">
         <h2>Vezető edző:</h2>
-        <p>Erdő-Lachner Tas</p>
+        <p>{{ korosztaly.vezeto_edzo }}</p>
+        {% if korosztaly.asszisztens_edzo %}
         <br />
         <h2>Asszisztens edző:</h2>
-        <p>Kövér Gábor</p>
+        <p>{{ korosztaly.asszisztens_edzo }}</p>
+        {% endif %}
       </div>
 
-      <div class="poszt-section">
-        <h2 class="poszt">Kapusok:</h2>
-        <p>Bödei Marcell, Fényes Áron, Hrivnák-Jamrik Viktor</p>
-      </div>
-
-      <div class="poszt-section">
-        <h2 class="poszt">Védők:</h2>
-        <p>
-          Kocszó István, Brödner Zsombor, Uhrin Erik, Varga Máté, Buda Zsolt
-        </p>
-      </div>
-
-      <div class="poszt-section">
-        <h2 class="poszt">Középpályások:</h2>
-        <p>
-          Puhl Bertalan, Leier Dániel, Vincze Dániel, Durmics Attila, Bráda
-          Bence, Kurucz Milán
-        </p>
-      </div>
-
-      <div class="poszt-section">
-        <h2 class="poszt">Támadók:</h2>
-        <p>
-          Bebesi Attila, Tóth Balázs, Szemes Dániel, Fejes Botond, Yermak
-          Maksym, Bátai Zsombor
-        </p>
-      </div>
+      {% for poszt, jatekos_lista in posztok.items %}
+        {% if jatekos_lista %}
+          <div class="poszt-section">
+            <h2 class="poszt">{{ poszt }}:</h2>
+            <p>
+              {% for jatekos in jatekos_lista %}
+                {{ jatekos.nev }}{% if jatekos.mezszam %} (#{{ jatekos.mezszam }}){% endif %}{% if not forloop.last %}, {% endif %}
+              {% endfor %}
+            </p>
+          </div>
+        {% endif %}
+      {% endfor %}
     </main>
     <footer>
       <div class="footer-container">

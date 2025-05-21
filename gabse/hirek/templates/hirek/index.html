@@ -40,16 +40,11 @@
         <li><a href="index.html">Kezdőlap</a></li>
         <li><a href="#rolunk">Rólunk</a></li>
         <li class="dropdown">
-          <a onclick="window.location.href='csapatok.html'">Csapataink</a>
+          <a onclick="window.location.href='{% url 'csapatok' %}'">Csapataink</a>
           <ul class="dropdown-menu">
-            <li><a href="csapatok/felnott.html">Felnőtt BLSZ III.</a></li>
-            <li><a href="csapatok/u19.html">U19</a></li>
-            <li><a href="csapatok/u17.html">U17</a></li>
-            <li><a href="csapatok/u16.html">U16</a></li>
-            <li><a href="csapatok/u15.html">U15</a></li>
-            <li><a href="csapatok/u11.html">U11</a></li>
-            <li><a href="csapatok/oldboys.html">Old Boys</a></li>
-            <li><a href="csapatok/oregfiuk.html">Öregfiúk</a></li>
+            {% for kor in korosztalyok %}
+              <li><a href="{% url 'korosztaly' kor.slug %}">{{ kor.nev }}</a></li>
+            {% endfor %}
           </ul>
         </li>
         <li><a href="edzok.html">Edzőink</a></li>

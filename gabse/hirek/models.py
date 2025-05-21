@@ -62,3 +62,42 @@ class PDFDocument(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class Korosztaly(models.Model):
+    nev = models.CharField(max_length=250, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
+    vezeto_edzo = models.CharField(max_length=250)
+    asszisztens_edzo = models.CharField(max_length=250, blank=True)
+    banner_kep = models.ImageField(upload_to='korosztaly_banner/', blank=True, null=True)
+    
+    class Meta:
+        verbose_name = "Korosztaly"
+        verbose_name_plural = "Korosztalyok"
+
+    def __str__(self):
+        return self.nev
+
+class Jatekos(models.Model):
+    POSZT_CHOICES = [
+        ('K', 'Kapus'),
+        ('V', 'Védő'),
+        ('KP', 'Középpályás'),
+        ('T', 'Támadó'),
+    ]
+    
+    nev = models.CharField(max_length=250)
+    korosztaly = models.ForeignKey(Korosztaly, on_delete=models.CASCADE, related_name='jatekosok')
+    poszt = models.CharField(max_length=2, choices=POSZT_CHOICES)
+    mezszam = models.PositiveSmallIntegerField(blank=True, null=True)
+    
+    class Meta:
+        verbose_name = "Jatekos"
+        verbose_name_plural = "Jatekosok"
+
+    def __str__(self):
+        return f"{self.nev} ({self.get_poszt_display()})"
+
+
+
+
