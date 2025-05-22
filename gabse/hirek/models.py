@@ -65,15 +65,32 @@ class PDFDocument(models.Model):
     
 
 class Korosztaly(models.Model):
-    nev = models.CharField(max_length=250, unique=True)
-    slug = models.SlugField(max_length=50, unique=True)
-    vezeto_edzo = models.CharField(max_length=250)
-    asszisztens_edzo = models.CharField(max_length=250, blank=True)
-    banner_kep = models.ImageField(upload_to='korosztaly_banner/', blank=True, null=True)
-    
+    nev = models.CharField("Korosztály neve", max_length=100)
+    slug = models.SlugField(unique=True)
+    sorrend = models.PositiveIntegerField("Sorrend", default=0)
+
     class Meta:
-        verbose_name = "Korosztaly"
-        verbose_name_plural = "Korosztalyok"
+        verbose_name = "Korosztály"
+        verbose_name_plural = "Korosztályok"
+        ordering = ['sorrend']
+
+    def __str__(self):
+        return self.nev
+
+class Edzo(models.Model):
+    TIPUS_CHOICES = [
+        ('edzo', 'Edző'),
+        ('szakmai', 'Szakmai Stáb'),
+    ]
+    
+    nev = models.CharField("Név", max_length=250)
+    pozicio = models.CharField("Pozíció", max_length=250)
+    tipus = models.CharField("Típus", max_length=10, choices=TIPUS_CHOICES)
+    korosztalyok = models.ManyToManyField(Korosztaly, blank=True, verbose_name="Vezetett korosztályok")
+
+    class Meta:
+        verbose_name = "Edző/Szakmai tag"
+        verbose_name_plural = "Edzők/Szakmai stáb"
 
     def __str__(self):
         return self.nev
@@ -97,7 +114,3 @@ class Jatekos(models.Model):
 
     def __str__(self):
         return f"{self.nev} ({self.get_poszt_display()})"
-
-
-
-

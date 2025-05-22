@@ -1,9 +1,11 @@
+
 # hirek/views.py
 from django.shortcuts import render, get_object_or_404
 from .models import Hir
 from .models import Hir, Meccs
 from .models import PDFDocument 
-from .models import Korosztaly 
+from .models import Korosztaly
+from .models import Edzo
 
 # hirek/views.py
 
@@ -36,7 +38,7 @@ def hir_reszletek(request, slug):
         'legfrissebb_hirek': legfrissebb_hirek
     })
 
-# Meglévő view-k megtartása
+
 def edzok(request):
     return render(request, "hirek/edzok.html")
 
@@ -59,14 +61,6 @@ def korosztaly(request, korosztaly_slug: str):
         'posztok': posztok,
     }
     return render(request, "hirek/korosztaly.html", context)
-def felnott(request):
-    return render(request, "hirek/felnott.html")
-
-def oldboys(request):
-    return render(request, "hirek/oldboys.html")
-
-def oregfiuk(request):
-    return render(request, "hirek/oregfiuk.html")
 
 def aktualis(request):
     osszes_hir = Hir.objects.filter(publikalt=True).order_by('-letrehozva')
@@ -75,5 +69,10 @@ def aktualis(request):
 
 
 def palyazat(request):
-    pdfs = PDFDocument.objects.all().order_by('-uploaded_at')  # Összes PDF dátum szerint rendezve
+    pdfs = PDFDocument.objects.all().order_by('-uploaded_at')  
     return render(request, 'hirek/palyazat.html', {'pdfs': pdfs})
+
+
+def edzok(request):
+    edzok = Edzo.objects.all().order_by('tipus', 'nev')
+    return render(request, 'hirek/edzok.html', {'edzok': edzok})

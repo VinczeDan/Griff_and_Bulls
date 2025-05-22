@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'hirek/csapatok-lista.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/header.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/footer.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
   <body>
     <header>
@@ -28,14 +29,18 @@
     <main class="csapatok-container">
       <h2 class="section-title">Csapataink</h2>
       <ul class="csapatok-lista">
-        <li><a href="csapatok/felnott.html"><i class="fas fa-users"></i> Felnőtt BLSZ III.</a></li>
-        <li><a href="csapatok/u19.html"><i class="fas fa-running"></i> U19</a></li>
-        <li><a href="csapatok/u17.html"><i class="fas fa-running"></i> U17</a></li>
-        <li><a href="csapatok/u16.html"><i class="fas fa-running"></i> U16</a></li>
-        <li><a href="csapatok/u15.html"><i class="fas fa-running"></i> U15</a></li>
-        <li><a href="csapatok/u11.html"><i class="fas fa-child"></i> U11</a></li>
-        <li><a href="csapatok/oldboys.html"><i class="fas fa-user-friends"></i> Old Boys</a></li>
-        <li><a href="csapatok/oregfiuk.html"><i class="fas fa-user-friends"></i> Öregfiúk</a></li>
+        {% for korosztaly in korosztalyok %}
+          <li>
+            <a href="{% url 'korosztaly' korosztaly.slug %}">
+              <i class="fas 
+                {% if 'felnőtt' in korosztaly.nev.lower %}fa-users
+                {% elif 'old' in korosztaly.nev.lower or 'öreg' in korosztaly.nev.lower %}fa-user-friends
+                {% elif 'u11' in korosztaly.nev.lower %}fa-child
+                {% else %}fa-running{% endif %}"></i> 
+              {{ korosztaly.nev }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </main>
   </body>

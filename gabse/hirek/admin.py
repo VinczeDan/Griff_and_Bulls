@@ -3,7 +3,23 @@ from django.contrib import admin
 from .models import Hir
 from .models import Meccs
 from .models import PDFDocument
-from .models import Korosztaly, Jatekos
+from .models import Korosztaly, Jatekos, Edzo
+
+
+
+@admin.register(Korosztaly)
+class KorosztalyAdmin(admin.ModelAdmin):
+    list_display = ('nev', 'slug', 'sorrend')
+    prepopulated_fields = {'slug': ('nev',)}
+
+@admin.register(Edzo)
+class EdzoAdmin(admin.ModelAdmin):
+    list_display = ('nev', 'pozicio', 'tipus')
+    list_filter = ('tipus', 'korosztalyok')
+    filter_horizontal = ('korosztalyok',)
+    search_fields = ('nev', 'pozicio')
+
+
 @admin.register(Hir)
 class HirAdmin(admin.ModelAdmin):
     list_display = ('cim', 'letrehozva', 'publikalt')
