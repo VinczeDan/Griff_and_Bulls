@@ -37,18 +37,18 @@
         <div class="line"></div>
       </div>
       <ul class="nav-links">
-        <li><a href="/index/">Kezdőlap</a></li>
+        <li><a href="{% url 'index' %}">Kezdőlap</a></li>
         <li><a href="#rolunk">Rólunk</a></li>
         <li class="dropdown">
-          <a onclick="window.location.href='{% url 'csapatok' %}'">Csapataink</a>
+          <a href="{% url 'csapatok' %}">Csapataink</a>
           <ul class="dropdown-menu">
             {% for kor in korosztalyok %}
-              <li><a href="{% url 'korosztaly' kor.slug %}">{{ kor.nev }}</a></li>
+            <li><a href="{% url 'korosztaly' kor.slug %}">{{ kor.nev }}</a></li>
             {% endfor %}
           </ul>
         </li>
-        <li><a href="/edzok/">Edzőink</a></li>
-        <li><a href="/palyazat/">Pályzat</a></li>
+        <li><a href="{% url 'edzok' %}">Edzőink</a></li>
+        <li><a href="{% url 'palyazat' %}">Pályázat</a></li>
         <li><a href="#kapcsolat">Kapcsolat</a></li>
       </ul>
     </nav>

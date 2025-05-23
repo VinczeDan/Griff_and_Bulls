@@ -3,13 +3,13 @@ from django.db import models
 from django.utils import timezone, text
 
 class Hir(models.Model):
-    cim = models.CharField(max_length=200, unique=True)  # Egyedi címek
+    cim = models.CharField(max_length=200, unique=True)  
     slug = models.SlugField(max_length=200, unique=True)
     tartalom = models.TextField()
     kiemelt_kep = models.ImageField(
-        upload_to='media/hirek_kepek',  # A media/ mappán belüli útvonal
-        blank=True,  # Nem kötelező
-        null=True    # Lehet üres az adatbázisban
+        upload_to='media/hirek_kepek',  
+        blank=True,  
+        null=True    
     )
     letrehozva = models.DateTimeField(default=timezone.now)
     publikalt = models.BooleanField(default=True)
@@ -77,6 +77,7 @@ class Korosztaly(models.Model):
     def __str__(self):
         return self.nev
 
+
 class Edzo(models.Model):
     TIPUS_CHOICES = [
         ('edzo', 'Edző'),
@@ -94,6 +95,8 @@ class Edzo(models.Model):
 
     def __str__(self):
         return self.nev
+
+
 
 class Jatekos(models.Model):
     POSZT_CHOICES = [

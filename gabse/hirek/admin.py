@@ -3,14 +3,11 @@ from django.contrib import admin
 from .models import Hir
 from .models import Meccs
 from .models import PDFDocument
-from .models import Korosztaly, Jatekos, Edzo
+from .models import Jatekos, Edzo, Korosztaly
 
 
 
-@admin.register(Korosztaly)
-class KorosztalyAdmin(admin.ModelAdmin):
-    list_display = ('nev', 'slug', 'sorrend')
-    prepopulated_fields = {'slug': ('nev',)}
+
 
 @admin.register(Edzo)
 class EdzoAdmin(admin.ModelAdmin):
@@ -54,11 +51,22 @@ class JatekosInline(admin.TabularInline):
     model = Jatekos
     extra = 1
 
+
 @admin.register(Korosztaly)
 class KorosztalyAdmin(admin.ModelAdmin):
-    list_display = ('nev', 'vezeto_edzo', 'asszisztens_edzo')
-    inlines = [JatekosInline]
+    list_display = ('nev', 'vezeto_edzo', 'asszisztens_edzo', 'sorrend')
     prepopulated_fields = {'slug': ('nev',)}
+    inlines = [JatekosInline]
+    
+    def vezeto_edzo(self, obj):
+        edzo = obj.vezeto_edzo()
+        return edzo.nev if edzo else "-"
+    vezeto_edzo.short_description = 'Vezető edző'
+    
+    def asszisztens_edzo(self, obj):
+        asszisztens = obj.asszisztens_edzo()
+        return asszisztens.nev if asszisztens else "-"
+    asszisztens_edzo.short_description = 'Asszisztens edző'
 
 @admin.register(Jatekos)
 class JatekosAdmin(admin.ModelAdmin):
