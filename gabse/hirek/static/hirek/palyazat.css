@@ -1,15 +1,15 @@
 /*======= PDF MEGJELENÍTÉS ========*/
 .pdf-display-section {
-    background-color: #161a1d;
+    background-color: var(--bg-dark);
     padding: 40px 0;
-    color: white;
+    color: var(--primary-light);
   }
   
   .pdf-display-title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 30px;
-    color: #d9d9d9;
+    color: var(--text-lighter);
   }
   
   .pdf-display-container {
@@ -22,10 +22,10 @@
   }
   
   .pdf-item {
-    background-color: #333;
+    background-color: var(--text-primary);
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px var(--hover-shadow);
     transition: transform 0.3s ease;
   }
   
@@ -34,15 +34,15 @@
   }
   
   .pdf-item h3 {
-    color: #d9d9d9;
+    color: var(--text-lighter);
     margin-bottom: 15px;
   }
   
   .pdf-link {
     display: inline-block;
     padding: 8px 15px;
-    background-color: darkred;
-    color: white;
+    background-color: var(--primary-red);
+    color: var(--primary-light);
     text-decoration: none;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -50,7 +50,7 @@
   }
   
   .pdf-link:hover {
-    background-color: #b30000;
+    background-color: var(--primary-red-hover);
   }
   
   .pdf-link i {
@@ -60,7 +60,7 @@
   .no-pdfs {
     text-align: center;
     grid-column: 1 / -1;
-    color: #d9d9d9;
+    color: var(--text-lighter);
     font-style: italic;
   }
   

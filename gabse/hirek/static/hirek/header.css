@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /*======= HEADER ========*/
@@ -10,9 +9,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f4f4f4;
+  background-color: var(--bg-light);
   padding: 20px; /* 1.5% -> 20px */
-  border-bottom: 1px solid #ddd; /* 0.1vw -> 1px */
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +44,7 @@ body {
 
 body {
   padding-top: 100px; /* 10vw -> 100px */
-  background-color: #161a1d;
+  background-color: var(--bg-dark);
 }
 
 header img {
@@ -56,13 +54,13 @@ header img {
 
 header h1 {
   font-size: 40px; /* 4vw -> 40px */
-  color: #333;
+  color:var(text-primary);
   margin: 0;
 }
 
 header p {
   font-size: 20px; /* 2vw -> 20px */
-  color: #666;
+  color: var(--text-secondary);
   font-style: italic;
   padding-left: 100px; /* Keep as px */
 }

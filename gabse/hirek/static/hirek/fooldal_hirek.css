@@ -18,9 +18,9 @@
   display: flex;
   align-items: center;
   gap: 15px; /* 1.5% -> 15px */
-  background-color: whitesmoke;
+  background-color: var(--griff-hatter-szin);
   border-radius: 8px; /* 0.8vw -> 8px */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* 0.3vw 0.6vw -> 3px 6px */
+  box-shadow: 0 3px 6px var(--shadow-color); /* 0.3vw 0.6vw -> 3px 6px */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
 }
@@ -39,12 +39,12 @@
 
 .hír_cim {
   font-size: 20px; /* 2.3vw -> 23px */
-  color: #333;
+  color: var(--text-vilagos-arany);
   margin: 0 0 20px 0; /* 0.8% -> 8px */
 }
 .datum {
     font-size: 15px;
-    color: #666;
+    color: var(--text-secondary);
     font-style: italic;
 }
 @media (max-width: 950px) {

@@ -77,3 +77,10 @@ document.getElementById("overlay").addEventListener("click", function () {
   overlay.classList.remove("active");
   body.classList.remove("menu-open");
 });
+
+
+
+const checkbox = document.getElementById("checkbox");
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+});

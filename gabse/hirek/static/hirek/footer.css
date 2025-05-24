@@ -1,10 +1,10 @@
 footer {
   padding: 20px 0; /* 2vw -> 20px */
   padding-top: 100px;
-  background-color: #161a1d;
-  color: white;
+  background-color: var(--bg-dark);
+  color: var(--primary-light);
   text-align: center;
-  border-top: 3px solid #161a1d; /* 0.3vw -> 3px */
+  border-top: 3px solid var(--primary-dark); /* 0.3vw -> 3px */
 }
 
 .footer-container {
@@ -34,7 +34,7 @@ footer {
 .footer-socials a,
 .footer-links a {
   font-size: 15px; /* 1.5vw -> 15px */
-  color: #d9d9d9;
+  color: var(--text-light);
   text-decoration: none;
   display: block;
   margin: 5px 0; /* 0.5vw -> 5px */
@@ -42,7 +42,7 @@ footer {
 
 .footer-socials a:hover,
 .footer-links a:hover {
-  color: red;
+  color: var(--primary-red-hover);
   text-decoration: underline;
 }
 

@@ -16,7 +16,7 @@
 .section-title {
   text-align: center;
   margin-bottom: 30px;
-  color: white;
+  color: var(--bg-card);
   font-size: 2.2rem;
   position: relative;
   padding-bottom: 10px;
@@ -30,7 +30,7 @@
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background-color: darkred;
+  background-color: var(--primary-red);
 }
 
 .csapatok-lista {
@@ -46,23 +46,23 @@
 }
 
 .csapatok-lista li a {
-  color: whitesmoke;
+  color: var(--primary-light);
   text-decoration: none;
   font-size: 18px;
   transition: all 0.3s ease;
-  background-color: darkred;
+  background-color: var(--primary-red);
   padding: 15px 20px;
   border-radius: 8px;
   width: 100%;
   display: flex;
   align-items: center;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px var(--shadow-color);
 }
 
 .csapatok-lista li a:hover {
-  background-color: #b30000;
+  background-color: var(--primary-red-hover);
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px var(--shadow-color);
 }
 
 .csapatok-lista li a i {

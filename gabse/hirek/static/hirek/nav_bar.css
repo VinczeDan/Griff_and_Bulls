@@ -1,7 +1,7 @@
 
 main,
 nav {
-  background-color: #161a1d;
+  background-color: var(--bg-dark);
 }
 
 nav {
@@ -15,7 +15,7 @@ nav ul {
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
-  background-color: red;
+  background-color: var(--primary-red-hover);
   border-radius: 2vw;
   padding: 0.5% 3%;
   width: 80%;
@@ -25,14 +25,14 @@ nav ul li {
   padding: 0.8% 2.5%;
   font-weight: bold;
   transition: 0.3s;
-  color: white;
+  color: var(--primary-light);
 }
 
 .nav-links li {
   padding: 0.8% 3.5%;
   font-weight: bold;
   transition: 0.3s;
-  color: white;
+  color: var(--primary-light);
   border-bottom: none;
 }
 
@@ -50,14 +50,14 @@ nav ul li {
 }
 
 nav ul li:hover {
-  background-color: darkred;
+  background-color: var(--primary-red);
   border-radius: 1.5vw;
   cursor: pointer;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: white;
+  color: var(--primary-light);
   font-weight: bold;
   display: block;
   font-size: 20px;
@@ -68,7 +68,7 @@ nav ul li a {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: darkred;
+  background-color: var(--primary-red);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -85,7 +85,7 @@ nav ul li a {
 }
 
 .dropdown-menu li a {
-  color: white;
+  color: var(--primary-light);
   padding: 0.5%;
   display: block;
 }
@@ -99,7 +99,7 @@ nav ul li.dropdown {
 }
 
 .dropdown-menu li:hover {
-  background-color: crimson;
+  background-color: var(--primary-red-hover);
 }
 
 .hamburger {
@@ -112,7 +112,7 @@ nav ul li.dropdown {
 .hamburger .line {
   width: 30px;
   height: 3px;
-  background-color: white;
+  background-color: var(--primary-light);
   margin: 4px 0;
 }
 /* Reszponzív módosítások */
@@ -128,7 +128,7 @@ nav ul li.dropdown {
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: #333;
+    background-color: var(--text-primary);
     position: absolute;
     top: 180px;
     left: 0;

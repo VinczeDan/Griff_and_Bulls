@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'hirek/nav_bar.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/rolunk.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/tabella.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/szinek.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/switch_button.css' %}" />
     <script src="{% static 'hirek/script.js' %}" defer></script>
   </head>
   <body>
@@ -52,6 +54,14 @@
         <li><a href="#kapcsolat">Kapcsolat</a></li>
       </ul>
     </nav>
+    <div class="mod-gomb">
+      <input type="checkbox" class="checkbox" id="checkbox">
+      <label for="checkbox" class="checkbox-label">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+        <span class="ball"></span>
+      </label>
+    </div>
     <!-- Overlay a háttér elsötétítéséhez -->
     <div class="overlay" id="overlay"></div>
     <main>

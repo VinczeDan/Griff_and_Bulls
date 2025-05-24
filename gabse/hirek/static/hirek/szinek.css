@@ -1,0 +1,29 @@
+:root {
+  /* Main colors */
+  --primary-dark: #161a1d;
+  --primary-red: darkred;
+  --primary-red-hover: #b30000;
+  --primary-light: gold;
+  --primary-gold: #d8a647;
+  --primary-sandy: sandybrown;
+  
+  /* Text colors */
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-light: #f0f0f0;
+  --text-lighter: #d9d9d9;
+  --text-dark: #222;
+  --text-cim: #FFB200;
+  --text-vilagos-arany: #FFECB3;
+  /* Background colors */
+  --bg-dark: #FFF9E6;
+  --bg-light: #FFF9E6;
+  --bg-gray: #d9d9d9;
+  --bg-card: white;
+  --griff-hatter-szin: #aa001b;
+  
+  /* Utility colors */
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --hover-shadow: rgba(0, 0, 0, 0.3);
+}
