@@ -81,7 +81,7 @@ hr {
 }
 
 .szoveg {
-  color: var(--primary-light);
+  color: var(--primary-dark);
   margin-top: 20px;
 }
 
@@ -94,6 +94,32 @@ hr {
 h3 {
   color: var(--primary-light);
 }
+nav {
+  margin-top: 10px;
+  background-color: var(--bg-light); /* A nav konténer háttérszíne */
+  padding: 30px 40px 10px 40px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* Balra igazítás */
+  gap: 20px; /* Távolság a gombok között */
+}
+
+nav ul li a {
+  color: var(--text-vilagos-arany);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s ease;
+  background-color: var(--primary-red); /* Piros háttér a linkeknek */
+  padding: 8px 16px; /* Belső térköz a szöveg körül */
+  border-radius: 20px; /* Lekerekített sarkok */
+  display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
+}
+
 
 @media (max-width: 1200px) {
   .hirek_tartalom {

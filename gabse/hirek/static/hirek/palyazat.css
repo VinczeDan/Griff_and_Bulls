@@ -1,77 +1,102 @@
 /*======= PDF MEGJELENÍTÉS ========*/
 .pdf-display-section {
-    background-color: var(--bg-light);
-    padding: 40px 0;
-    color: var(--primary-light);
-  }
-  
-  .pdf-display-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: var(--text-lighter);
-  }
-  
+  background-color: var(--bg-light);
+  padding: 40px 0;
+  color: var(--primary-light);
+}
+
+.pdf-display-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--primary-gold);
+}
+
+.pdf-display-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.pdf-item {
+  background-color: var(--text-primary);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px var(--hover-shadow);
+  transition: transform 0.3s ease;
+}
+
+.pdf-item:hover {
+  transform: translateY(-5px);
+}
+
+.pdf-item h3 {
+  color: var(--text-lighter);
+  margin-bottom: 15px;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: var(--primary-red);
+  color: var(--primary-light);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.pdf-link:hover {
+  background-color: var(--primary-red-hover);
+}
+
+.pdf-link i {
+  margin-right: 8px;
+}
+
+.no-pdfs {
+  text-align: center;
+  grid-column: 1 / -1;
+  color: var(--text-lighter);
+  font-style: italic;
+}
+nav {
+  margin-top: 10px;
+  background-color: var(--bg-light); /* A nav konténer háttérszíne */
+  padding: 30px 40px 10px 40px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* Balra igazítás */
+  gap: 20px; /* Távolság a gombok között */
+}
+
+nav ul li a {
+  color: var(--text-vilagos-arany);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s ease;
+  background-color: var(--primary-red); /* Piros háttér a linkeknek */
+  padding: 8px 16px; /* Belső térköz a szöveg körül */
+  border-radius: 20px; /* Lekerekített sarkok */
+  display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
+}
+
+/* Reszponzív design */
+@media (max-width: 768px) {
   .pdf-display-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
-  
-  .pdf-item {
-    background-color: var(--text-primary);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 5px 15px var(--hover-shadow);
-    transition: transform 0.3s ease;
+
+  .pdf-display-title {
+    font-size: 1.5rem;
   }
-  
-  .pdf-item:hover {
-    transform: translateY(-5px);
-  }
-  
-  .pdf-item h3 {
-    color: var(--text-lighter);
-    margin-bottom: 15px;
-  }
-  
-  .pdf-link {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: var(--primary-red);
-    color: var(--primary-light);
-    text-decoration: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    transition: background-color 0.3s;
-  }
-  
-  .pdf-link:hover {
-    background-color: var(--primary-red-hover);
-  }
-  
-  .pdf-link i {
-    margin-right: 8px;
-  }
-  
-  .no-pdfs {
-    text-align: center;
-    grid-column: 1 / -1;
-    color: var(--text-lighter);
-    font-style: italic;
-  }
-  
-  /* Reszponzív design */
-  @media (max-width: 768px) {
-    .pdf-display-container {
-      grid-template-columns: 1fr;
-    }
-    
-    .pdf-display-title {
-      font-size: 1.5rem;
-    }
-  }
-  /*======= PDF MEGJELENÍTÉS VÉGE ========*/
+}
+/*======= PDF MEGJELENÍTÉS VÉGE ========*/

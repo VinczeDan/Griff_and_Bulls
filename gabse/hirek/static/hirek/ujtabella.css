@@ -1,7 +1,8 @@
-/* Alap stílusok */
+/* Alap stílusok - minden felirat egységes */
 .eredmenyek_felirat,
 .hirek_felirat,
-.kovetkezo_meccseing_felirat {
+.kovetkezo_meccseing_felirat,
+.rolunk_felirat {
   color: var(--text-cim);
   margin: 0 25px;
   font-size: 40px;
@@ -11,18 +12,44 @@
   text-overflow: ellipsis;
 }
 
-.hirek_alatt_hr {
-  margin: 15px; 
-  background: var(--text-cim);
+.hirek_felirat{
+  padding-bottom: 20px;
 }
 
 .eredmenyek_alatt_hr,
-.kovetkezo_meccs_alatt_hr {
-  margin: 0 25px;
-  color: var(--text-cim);
+.kovetkezo_meccs_alatt_hr,
+.rolunk_alatt_hr {
+  margin: 0 25px 15px 25px;
+  background: var(--text-cim);
+  height: 1.3px;
+  border: none;
 }
 
-/* Táblázatok alap elrendezése */
+/* Hírek rész */
+.egesz-hirek {
+  max-width: 1400px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+}
+
+.hirek_felirat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 0 25px;
+}
+
+
+
+
+.text-content {
+  padding: 15px;
+}
+
+
+
+/* Eredmények és következő meccsek */
 .tartalom_kontener {
   display: flex;
   justify-content: center;
@@ -30,7 +57,7 @@
   gap: 30px;
   padding: 0 20px;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
 }
 
 .eredmenyek_div,
@@ -49,6 +76,11 @@
   border-radius: 3px;
   padding: 12px 15px;
   min-height: 60px;
+  transition: transform 0.2s ease;
+}
+
+.eredmenyek_csik:hover {
+  transform: scale(1.01);
 }
 
 .eredmenyek_bal {
@@ -96,33 +128,25 @@
   margin-left: 15px;
 }
 
-/* Hiányzó eredmények kezelése */
-.eredmenyek_bal > div:empty::before {
-  content: "-";
-  color: var(--text-secondary);
-  width: 50px;
-  display: inline-block;
-  text-align: center;
-}
 
-/* Reszponzív módosítások - Teljesen átalakított mobil nézet */
+/* Reszponzív módosítások */
 @media (max-width: 768px) {
-  .tartalom_kontener {
-    gap: 20px;
+  .tartalom_kontener,
+  .rolunk_container {
     padding: 0 15px;
   }
   
   .eredmenyek_csik {
     flex-direction: column;
     align-items: flex-start;
-    padding: 7px;
-    margin: 8px 0;
+    padding: 10px;
+    margin: 8px 15px;
     min-height: auto;
   }
   
   .eredmenyek_bal {
     width: 100%;
-    margin-bottom: 4px;
+    margin-bottom: 5px;
     gap: 10px;
     flex-wrap: wrap;
   }
@@ -133,10 +157,9 @@
   }
   
   .eredmenyek_meccs {
-    font-size: 15px;
+    font-size: 16px;
     padding: 0;
     flex: 1 1 60%;
-    min-width: 120px;
   }
   
   .eredmenyek_eredmeny {
@@ -148,36 +171,28 @@
   .meccs_idopont {
     width: 100%;
     text-align: left;
-    margin: 0px 0 0 0;
+    margin: 5px 0 0 0;
     font-size: 13px;
     order: 2;
   }
+  
+  
 }
 
 @media (max-width: 480px) {
   .eredmenyek_felirat,
-  .kovetkezo_meccseing_felirat {
+  .hirek_felirat,
+  .kovetkezo_meccseing_felirat,
+  .rolunk_felirat {
     font-size: 28px;
     margin: 0 15px;
   }
   
-  .eredmenyek_csik {
-    padding: 7px;
+  .hirek_alatt_hr,
+  .eredmenyek_alatt_hr,
+  .kovetkezo_meccs_alatt_hr,
+  .rolunk_alatt_hr {
+    margin: 0 15px 10px 15px;
   }
-  
-  .eredmenyek_korosztaly {
-    font-size: 15px;
-  }
-  
-  .eredmenyek_meccs {
-    font-size: 14px;
-  }
-  
-  .eredmenyek_eredmeny {
-    font-size: 17px;
-  }
-  
-  .meccs_idopont {
-    font-size: 12px;
-  }
+ 
 }

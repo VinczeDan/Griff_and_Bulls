@@ -54,7 +54,7 @@ class JatekosInline(admin.TabularInline):
 
 @admin.register(Korosztaly)
 class KorosztalyAdmin(admin.ModelAdmin):
-    list_display = ('nev', 'vezeto_edzo', 'asszisztens_edzo', 'sorrend')
+    list_display = ('nev',   'sorrend')
     prepopulated_fields = {'slug': ('nev',)}
     inlines = [JatekosInline]
     

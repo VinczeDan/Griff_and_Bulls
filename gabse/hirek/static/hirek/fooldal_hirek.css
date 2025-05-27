@@ -3,11 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .sections-container {
   display: flex;
   justify-content: space-between;
-  gap: 15px; /* 1.5% -> 15px */
-  align-items: center;
+  gap: 15px;
+  align-items: stretch;
   max-width: 80%;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -16,55 +17,62 @@
 .hirek_section {
   flex: 1;
   display: flex;
-  align-items: center;
-  gap: 15px; /* 1.5% -> 15px */
+  gap: 15px;
   background-color: var(--griff-hatter-szin);
-  border-radius: 8px; /* 0.8vw -> 8px */
-  box-shadow: 0 3px 6px var(--shadow-color); /* 0.3vw 0.6vw -> 3px 6px */
+  border-radius: 8px;
+  box-shadow: 0 3px 6px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-decoration: none;
+  padding: 15px;
+  min-height: 150px; /* Minimum magasság biztosítása */
 }
 
 .hirek_section img {
-  width: 100px; /* 10vw -> 100px */
-  padding: 3%; /* 3% -> 30px */
-  height: auto;
-  border-radius: 20%; /* 2vw -> 20px */
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 20%;
+  flex-shrink: 0;
+  align-self: center; /* Kép középre igazítása függőlegesen */
 }
 
 .text-content {
   flex: 1;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .hír_cim {
-  font-size: 20px; /* 2.3vw -> 23px */
+  font-size: 19px;
   color: var(--text-vilagos-arany);
-  margin: 0 0 20px 0; /* 0.8% -> 8px */
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  flex-grow: 1; /* A cím növekedhet a rendelkezésre álló térben */
 }
+
 .datum {
-    font-size: 15px;
-    color: var(--text-secondary);
-    font-style: italic;
+  font-size: 17px;
+  color: var(--text-primary);
+  font-style: italic;
+  margin-top: 10px; /* Fix távolság a cím és dátum között */
 }
+
 @media (max-width: 950px) {
   .sections-container {
     flex-direction: column;
-    gap: 10%;
   }
-
   
   .hirek_section {
     width: 100%;
-    margin: 10px;
+    min-height: 120px; /* Kisebb minimum magasság mobilnál */
   }
 
   .hirek_section img {
-    width: 30%; /* 15vw -> 150px */
-    border-radius: 20%;
+    width: 80px;
+    height: 80px;
   }
 
   .hír_cim {
-    font-size: 3.5vw; /* 3.5vw -> 35px */
+    font-size: 17px;
   }
 }
