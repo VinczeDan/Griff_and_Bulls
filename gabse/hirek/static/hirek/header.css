@@ -44,7 +44,7 @@ body {
 
 body {
   padding-top: 100px; /* 10vw -> 100px */
-  background-color: var(--bg-dark);
+  background-color: var(--bg-light);
 }
 
 header img {

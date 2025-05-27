@@ -1,6 +1,6 @@
 /*======= PDF MEGJELENÍTÉS ========*/
 .pdf-display-section {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-light);
     padding: 40px 0;
     color: var(--primary-light);
   }

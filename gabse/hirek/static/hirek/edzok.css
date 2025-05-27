@@ -12,7 +12,7 @@ body {
 
 body {
   padding-top: 100px; /* 10vw -> 100px */
-  background-color: var(--bg-dark);
+  background-color: var(--bg-light);
 }
 
 
@@ -74,7 +74,7 @@ main {
 /*======= NAVIGATION ========*/
 nav {
     margin-top: 10px;
-    background-color: var(--bg-dark); /* A nav konténer háttérszíne */
+    background-color: var(--bg-light); /* A nav konténer háttérszíne */
     padding: 30px 40px 10px 40px;
 }
 

@@ -79,8 +79,23 @@ document.getElementById("overlay").addEventListener("click", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const checkbox = document.getElementById("checkbox");
 
-const checkbox = document.getElementById("checkbox");
-checkbox.addEventListener("change", () => {
-  document.body.classList.toggle("dark");
-});
+  // Alapértelmezett téma beállítása
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    checkbox.checked = true;
+  }
+
+  // Témaváltó eseménykezelő
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      document.body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  });
+}); 
