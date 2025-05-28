@@ -119,7 +119,10 @@ nav ul li a {
   border-radius: 20px; /* Lekerekített sarkok */
   display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
 }
-
+nav ul li a:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #d62b2b;
+}
 
 @media (max-width: 1200px) {
   .hirek_tartalom {

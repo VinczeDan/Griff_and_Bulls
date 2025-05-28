@@ -2,98 +2,140 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-
-/* Adjust body padding to account for smaller header */
-body {
-  padding-top: 80px; /* 8vw -> 80px */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  padding-top: 100px; /* 10vw -> 100px */
-  background-color: var(--bg-light);
+  padding-top: 100px;
+  background-color: var(--bg-dark);
+  color: var(--primary-light);
+  line-height: 1.6;
 }
 
-
-
-
-/*======= Edző html ========*/
-
+/*======= Main Content ========*/
 main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px;
-    margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem auto;
+  max-width: 1200px;
+  gap: 2rem;
+  padding: 0 20px;
 }
 
 .edzok_tablazat {
-    color: var(--primary-light);
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 20px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    border-radius: 10px;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
+  width: 48%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+  box-shadow: 0 6px 15px var(--shadow-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.edzok_tablazat th{
-    padding: 15px 20px;
-    text-align: left;
+.edzok_tablazat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+.edzok_tablazat th, 
 .edzok_tablazat td {
-    padding: 15px 20px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  text-align: left;
+}
+
+.edzok_tablazat td {
+  background: var(--text-lighter);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--primary-dark);
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.edzok_tablazat tr:last-child td {
+  border-bottom: none;
+}
+
+.edzok_tablazat tr:hover td {
+  background-color: #f0f0f0;
 }
 
 .edzok_tablazat th {
-    background-color: var(--primary-red);
-    color: var(--primary-light);
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
-    width: 100%; 
+  background-color: var(--primary-red);
+  color: var(--primary-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
 }
 
-
-
-
-
+.edzok_tablazat th::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+}
 
 .tablazat_fejlec {
-    background-color: var(--primary-red);
-    color: var(--primary-light);
-    justify-content: center;
+  background-color: var(--primary-red);
+  color: var(--primary-light);
 }
-
-
 
 /*======= NAVIGATION ========*/
 nav {
-    margin-top: 10px;
-    background-color: var(--bg-light); /* A nav konténer háttérszíne */
-    padding: 30px 40px 10px 40px;
+  margin-top: 10px;
+  background-color: var(--bg-light);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start; /* Balra igazítás */
-    gap: 20px; /* Távolság a gombok között */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
 }
 
 nav ul li a {
-    color: var(--primary-light);
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.2s ease;
-    background-color: var(--primary-red); /* Piros háttér a linkeknek */
-    padding: 8px 16px; /* Belső térköz a szöveg körül */
-    border-radius: 20px; /* Lekerekített sarkok */
-    display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
+  color: var(--primary-light);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: var(--primary-red);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #d62b2b;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .edzok_tablazat {
+    width: 100%;
+  }
+  
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }

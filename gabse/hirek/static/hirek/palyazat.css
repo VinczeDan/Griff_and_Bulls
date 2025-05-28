@@ -89,6 +89,10 @@ nav ul li a {
   display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
 }
 
+nav ul li a:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #d62b2b;
+}
 /* Reszponzív design */
 @media (max-width: 768px) {
   .pdf-display-container {
