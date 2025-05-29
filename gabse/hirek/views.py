@@ -6,6 +6,7 @@ from .models import Hir, Meccs
 from .models import PDFDocument 
 from .models import Korosztaly
 from .models import Edzo
+from django.utils import timezone
 
 # hirek/views.py
 
@@ -15,7 +16,10 @@ def fooldal(request):
     
     # Új adatok: eredmények és következő meccsek
     eredmenyek = Meccs.objects.filter(tipus='EREDMENY').order_by('-datum')[:5]
-    kovetkezo_meccsek = Meccs.objects.filter(tipus='KOVETKEZO').order_by('datum')[:5]
+    kovetkezo_meccsek = Meccs.objects.filter(
+        tipus='KOVETKEZO',
+        datum__gte=timezone.now().date() 
+    ).order_by('datum')[:5]
     korosztalyok = Korosztaly.objects.all()
 
     # Összes adat átadása a template-nek
@@ -38,12 +42,12 @@ def hir_reszletek(request, slug):
         'legfrissebb_hirek': legfrissebb_hirek
     })
 
-
 def edzok(request):
     return render(request, "hirek/edzok.html")
 
 def csapataink(request):
-    return render(request, "hirek/csapatok.html")
+    korosztalyok = Korosztaly.objects.all().order_by('nev')
+    return render(request, 'hirek/csapatok.html', {'korosztalyok': korosztalyok})
 
 def korosztaly(request, korosztaly_slug: str):
     korosztaly = get_object_or_404(Korosztaly, slug=korosztaly_slug)

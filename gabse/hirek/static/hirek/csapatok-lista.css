@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -55,7 +54,8 @@
   border-radius: 8px;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: center;      /* Centers vertically */
+  justify-content: center; /* Centers horizontally */
   box-shadow: 0 3px 6px var(--shadow-color);
 }
 
@@ -68,6 +68,40 @@
 .csapatok-lista li a i {
   margin-right: 12px;
   font-size: 1.2em;
+}
+
+nav {
+  margin-top: 10px;
+  background-color: var(--bg-light);
+  padding: 1.5rem 2rem;
+  padding-bottom: 0px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: var(--primary-red);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li a:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #d62b2b;
 }
 
 @media (max-width: 768px) {

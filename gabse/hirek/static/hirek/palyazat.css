@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /*======= PDF MEGJELENÍTÉS ========*/
 .pdf-display-section {
   background-color: var(--bg-light);
@@ -63,30 +68,34 @@
   color: var(--text-lighter);
   font-style: italic;
 }
+
+/*======= NAVIGATION ========*/
 nav {
   margin-top: 10px;
-  background-color: var(--bg-light); /* A nav konténer háttérszíne */
-  padding: 30px 40px 10px 40px;
+  background-color: var(--bg-light);
+  padding: 1.5rem 2rem;
 }
 
 nav ul {
   list-style-type: none;
-  margin: 0;
+  margin-top: 10px;
   padding: 0;
   display: flex;
-  justify-content: flex-start; /* Balra igazítás */
-  gap: 20px; /* Távolság a gombok között */
+  justify-content: flex-start;
+  gap: 1.5rem;
 }
 
 nav ul li a {
-  color: var(--text-vilagos-arany);
+  color: var(--primary-light);
   text-decoration: none;
-  font-size: 18px;
-  transition: color 0.2s ease;
-  background-color: var(--primary-red); /* Piros háttér a linkeknek */
-  padding: 8px 16px; /* Belső térköz a szöveg körül */
-  border-radius: 20px; /* Lekerekített sarkok */
-  display: inline-block; /* Csak a szöveg szélességéig legyen piros háttér */
+  font-size: 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: var(--primary-red);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul li a:hover {

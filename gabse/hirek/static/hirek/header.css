@@ -39,10 +39,6 @@ header.scrolled p {
 
 /* Adjust body padding to account for smaller header */
 body {
-  padding-top: 80px; /* 8vw -> 80px */
-}
-
-body {
   padding-top: 100px; /* 10vw -> 100px */
   background-color: var(--bg-light);
 }

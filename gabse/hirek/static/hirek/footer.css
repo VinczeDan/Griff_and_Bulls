@@ -41,7 +41,7 @@ footer {
 
 .footer-socials a:hover,
 .footer-links a:hover {
-  color: var(--primary-red-hover);
+  color: var(--primary-red);
   text-decoration: underline;
 }
 
