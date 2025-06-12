@@ -6,7 +6,6 @@
 
 
 
-/*======= Main Content ========*/
 main {
   display: flex;
   flex-direction: row;
@@ -74,7 +73,7 @@ main {
   color: var(--primary-light);
 }
 
-/*======= NAVIGATION ========*/
+
 nav {
   margin-top: 10px;
   background-color: var(--bg-light);
@@ -109,8 +108,6 @@ nav ul li a:hover {
 }
 
 
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
   main {
     flex-direction: column;
