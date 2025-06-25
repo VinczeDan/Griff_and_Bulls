@@ -79,10 +79,9 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Opcionális: egyéni statikus mappák
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'hirek/static')]
+
 
 MEDIA_URL = '/media/'  # Új sor
 MEDIA_ROOT = BASE_DIR / 'media'  # Új sor

@@ -3,23 +3,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Griff & Bulls SE hivatalos weboldala - U7-től Old Boys-ig"
+    />
+    <meta
+      property="og:image"
+      content="{% static 'hirek/images/social.jpg' %}"
+    />
     <title>Griff & Bulls</title>
-    <link rel="stylesheet" href="{% static 'hirek/fooldal_hirek.css' %}" />
-    <link rel="stylesheet" href="{% static 'hirek/footer.css' %}" />
-    <link rel="stylesheet" href="{% static 'hirek/nav_bar.css' %}" />
-    <link rel="stylesheet" href="{% static 'hirek/rolunk.css' %}" />
-    <link rel="stylesheet" href="{% static 'hirek/ujtabella.css' %}" />
-    <link rel="stylesheet" href="{% static 'hirek/szinek.css' %}" />
-    <link rel="stylesheet" href="{% static 'hirek/switch_button.css' %}" />
-    <link rel="stylesheet" href="{% static 'hirek/header.css' %}" />
-    <script src="{% static 'hirek/script.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'hirek/css/fooldal_hirek.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/footer.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/nav_bar.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/rolunk.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/ujtabella.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/szinek.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/switch_button.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/header.css' %}" />
+    <script src="{% static 'hirek/js/script.js' %}" defer></script>
   </head>
   <body>
     <header>
       <img
         class="gab_feher_bal"
-        src="{% static 'hirek/gab_feher.png' %}"
+        src="{% static 'hirek/images/gab_feher.png' %}"
         alt="GAB Fehér"
       />
       <div class="header-text">
@@ -28,7 +35,7 @@
       </div>
       <img
         class="gab_feher_jobb"
-        src="{% static 'hirek/gab_feher.png' %}"
+        src="{% static 'hirek/images/gab_feher.png' %}"
         alt="GAB Fehér"
       />
     </header>
@@ -54,7 +61,7 @@
         <li><a href="#kapcsolat">Kapcsolat</a></li>
       </ul>
     </nav>
-    
+
     <!-- Overlay a háttér elsötétítéséhez -->
     <div class="overlay" id="overlay"></div>
     <main>
