@@ -11,6 +11,7 @@ from hirek.views import (
 )
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponse
 
 
 urlpatterns = [
@@ -24,4 +25,5 @@ urlpatterns = [
     path("csapatok/korosztaly/<slug:korosztaly_slug>/", korosztaly, name='korosztaly'),
     path("aktualis/", aktualis, name='aktualis'),
     path('palyazat/', palyazat, name='palyazat'),
+    path("health/", lambda request: HttpResponse("OK")),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  

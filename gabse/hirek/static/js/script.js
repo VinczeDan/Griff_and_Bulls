@@ -68,6 +68,7 @@ document.querySelectorAll(".nav-links a").forEach(function (link) {
     body.classList.remove("menu-open");
   });
 });
+
 document.getElementById("overlay").addEventListener("click", function () {
   const navLinks = document.querySelector(".nav-links");
   const overlay = document.getElementById("overlay");
