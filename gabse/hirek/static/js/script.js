@@ -7,7 +7,6 @@ function toggleMenu() {
   navLinks.classList.toggle("active");
   overlay.classList.toggle("active");
 
-  // Görgetés letiltása/engedélyezése
   if (navLinks.classList.contains("active")) {
     body.classList.add("menu-open");
   } else {
@@ -15,10 +14,8 @@ function toggleMenu() {
   }
 }
 
-// Legördülő menü megnyitása/zárása
 function toggleDropdown(event) {
   if (window.innerWidth <= 1200) {
-    // Csak mobil esetén
     event.preventDefault();
     const dropdown = event.target.closest(".dropdown");
     if (dropdown) {
@@ -28,7 +25,6 @@ function toggleDropdown(event) {
   }
 }
 
-// Kattintás esemény kezelése a dokumentumon
 document.addEventListener("click", function (event) {
   if (!event.target.matches(".dropdown a")) {
     const dropdowns = document.querySelectorAll(".dropdown-menu");
@@ -38,7 +34,6 @@ document.addEventListener("click", function (event) {
   }
 });
 
-// Legördülő menü ikonokhoz eseményfigyelő hozzáadása
 document.querySelectorAll(".dropdown").forEach(function (dropdown) {
   dropdown.addEventListener("click", function () {
     const dropdownMenu = dropdown.querySelector(".dropdown-menu");
@@ -49,14 +44,12 @@ document.querySelectorAll(".dropdown").forEach(function (dropdown) {
 window.addEventListener("scroll", function () {
   const header = document.querySelector("header");
   if (window.scrollY > 50) {
-    // Adjust the scroll threshold as needed
     header.classList.add("scrolled");
   } else {
     header.classList.remove("scrolled");
   }
 });
 
-// Menüpontokra kattintáskor bezárja a menüt és engedélyezi a görgetést
 document.querySelectorAll(".nav-links a").forEach(function (link) {
   link.addEventListener("click", function () {
     const navLinks = document.querySelector(".nav-links");
@@ -83,13 +76,11 @@ document.getElementById("overlay").addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const checkbox = document.getElementById("checkbox");
 
-  // Alapértelmezett téma beállítása
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark");
     checkbox.checked = true;
   }
 
-  // Témaváltó eseménykezelő
   checkbox.addEventListener("change", function () {
     if (this.checked) {
       document.body.classList.add("dark");

@@ -33,7 +33,6 @@ hr {
 
 /* Individual news card */
 .hir_csempe {
-    background-color: var(--primary-light);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 3px 10px var(--shadow-color);

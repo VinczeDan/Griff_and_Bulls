@@ -54,7 +54,7 @@
   font-size: 17px;
   color: var(--text-primary);
   font-style: italic;
-  margin-top: 10px; /* Fix távolság a cím és dátum között */
+  margin-top: 10px; 
 }
 
 @media (max-width: 950px) {
@@ -64,7 +64,7 @@
   
   .hirek_section {
     width: 100%;
-    min-height: 120px; /* Kisebb minimum magasság mobilnál */
+    min-height: 120px; 
   }
 
   .hirek_section img {
