@@ -7,7 +7,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'griff-and-bulls.onrender.com',  # Az Environment Variables-ben látott
     'griff-and-bulls-1.onrender.com',  # A settings.py-ban
-    'dpg-d1e41jmr433s73ca1he9-a'  # Az új adatbázis hoszt
+    'dpg-d1e41jmr433s73ca1he9-a',
+    '127.0.0.1'
 ]
 INSTALLED_APPS = [
     'django.contrib.admin',
