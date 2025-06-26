@@ -81,7 +81,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'hirek/static'
+STATIC_URL = 'hirek/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'hirek/static')]
 
@@ -90,3 +90,4 @@ MEDIA_URL = '/media/'  # Új sor
 MEDIA_ROOT = BASE_DIR / 'media'  # Új sor
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
