@@ -16,7 +16,6 @@ from django.http import HttpResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
     path('', fooldal, name='fooldal'),
     path('hirek/', include('hirek.urls')),
     path("index/", fooldal, name='index'),
