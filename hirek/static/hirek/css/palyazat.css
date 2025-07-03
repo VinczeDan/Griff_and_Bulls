@@ -113,11 +113,16 @@
 }
 
 /* Button Styles - Combined from both codes */
+.button-container {
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
 .button {
   --width: 120px;
   --height: 40px;
   --tooltip-height: 35px;
-  --tooltip-width: 90px;
+  --tooltip-width: 120px;
   --gap-between-tooltip-to-button: 18px;
   --button-color: #1163ff;
   --tooltip-color: #fff;
@@ -127,13 +132,19 @@
   position: relative;
   text-align: center;
   border-radius: 0.45em;
-  font-family: "Arial", sans-serif;
+  font-family: "Arial";
   transition: background 0.3s;
   border: none;
   cursor: pointer;
-  padding: 0;
-  margin: 0;
   overflow: hidden;
+}
+
+.button .pdf-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 .button::before {
@@ -169,35 +180,34 @@
   transition: all 0.5s;
 }
 
-.button-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .text {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   width: 100%;
   height: 100%;
-  color: white;
-  transition: transform 0.5s;
+  left: 0;
+  top: 0;
+  color: #fff;
+  transition: top 0.5s;
 }
 
 .icon {
   position: absolute;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  transform: translateY(100%);
-  transition: transform 0.5s;
+  color: #fff;
+  transition: top 0.5s;
+}
+
+.icon i {
+  font-size: 1.2rem;
 }
 
 .button:hover {
@@ -205,11 +215,11 @@
 }
 
 .button:hover .text {
-  transform: translateY(-100%);
+  top: -100%;
 }
 
 .button:hover .icon {
-  transform: translateY(0);
+  top: 0;
 }
 
 .button:hover:before,
