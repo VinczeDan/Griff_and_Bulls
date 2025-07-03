@@ -39,21 +39,28 @@
       <section class="pdf-display-section">
         <h2 class="pdf-display-title">Pályázati dokumentumok</h2>
         <div class="pdf-display-container">
-          {% for pdf in pdfs %}
-          <div class="pdf-item">
-            <h3>{{ pdf.title }}</h3>
-            <a href="{{ pdf.file.url }}" target="_blank" class="pdf-link">
-              <i class="fas fa-file-pdf"></i> Letöltés
-            </a>
-            <small>Feltöltve: {{ pdf.uploaded_at|date:"Y.m.d H:i" }}</small>
-          </div>
-          {% empty %}
-          <p class="no-pdfs">
-            Jelenleg nincsenek elérhető pályázati dokumentumok.
-          </p>
-          {% endfor %}
+            {% for pdf in pdfs %}
+            <div class="pdf-item">
+                <h3>{{ pdf.title }}</h3>
+                <div class="button-container">
+                    <button class="button" data-tooltip="Kattints a letöltéshez">
+                        <a href="{{ pdf.file.url }}" target="_blank" class="pdf-link">
+                            <span class="text">Letöltés</span>
+                            <span class="icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+                        </a>
+                    </button>
+                </div>
+                <small>Feltöltve: {{ pdf.uploaded_at|date:"Y.m.d H:i" }}</small>
+            </div>
+            {% empty %}
+            <p class="no-pdfs">
+                Jelenleg nincsenek elérhető pályázati dokumentumok.
+            </p>
+            {% endfor %}
         </div>
-      </section>
+    </section>
     </main>
     <footer>
       <div class="footer-container">
