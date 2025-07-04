@@ -112,17 +112,12 @@
   color: #666;
 }
 
-/* Button Styles - Combined from both codes */
-.button-container {
-  display: inline-block;
-  margin: 0.5rem 0;
-}
-
+/* From Uiverse.io by satyamchaudharydev */ 
 .button {
-  --width: 120px;
-  --height: 40px;
+  --width: 100px;
+  --height: 35px;
   --tooltip-height: 35px;
-  --tooltip-width: 120px;
+  --tooltip-width: 90px;
   --gap-between-tooltip-to-button: 18px;
   --button-color: #1163ff;
   --tooltip-color: #fff;
@@ -134,17 +129,6 @@
   border-radius: 0.45em;
   font-family: "Arial";
   transition: background 0.3s;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.button .pdf-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
 }
 
 .button::before {
@@ -155,16 +139,15 @@
   background-color: var(--tooltip-color);
   font-size: 0.9rem;
   color: #111;
-  border-radius: 0.25em;
+  border-radius: .25em;
   line-height: var(--tooltip-height);
   bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
   left: calc(50% - var(--tooltip-width) / 2);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .button::after {
   position: absolute;
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border: 10px solid transparent;
@@ -173,8 +156,7 @@
   bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
 }
 
-.button::after,
-.button::before {
+.button::after,.button::before {
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
@@ -184,30 +166,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
   position: absolute;
   width: 100%;
   height: 100%;
   left: 0;
-  top: 0;
   color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
   transition: top 0.5s;
 }
 
 .icon {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
+  color: #fff;
   top: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  transition: top 0.5s;
 }
 
-.icon i {
-  font-size: 1.2rem;
+.icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .button:hover {
@@ -222,8 +210,7 @@
   top: 0;
 }
 
-.button:hover:before,
-.button:hover:after {
+.button:hover:before,.button:hover:after {
   opacity: 1;
   visibility: visible;
 }
@@ -235,6 +222,7 @@
 .button:hover:before {
   bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
 }
+
 
 /*======= NAVIGATION ========*/
 nav {
