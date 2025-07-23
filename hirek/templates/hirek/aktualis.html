@@ -30,34 +30,16 @@
       <h1>Aktualis</h1>
       <hr />
       <div class="hirek_container">
+        {% for hir in hirek %}
         <div class="hir_csempe">
-          <h2>Mentorprogram</h2>
-          <div class="datum">2025.13.24</div>
+          <h2>{{ hir.cim }}</h2>
+          <div class="datum">{{ hir.letrehozva|date:"Y.m.d" }}</div>
           <div class="kedvcsinalo">
-            
+            {{ hir.tartalom|truncatewords:30 }}
           </div>
         </div>
-        <div class="hir_csempe">
-          <h2>Mentorprogram</h2>
-          <div class="datum">2025.13.24</div>
-          <div class="kedvcsinalo">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
-            ullam aliquid velit ea dolorem nesciunt delectus soluta sapiente
-            possimus debitis dignissimos at voluptatibus, voluptatem deleniti
-            est praesentium, esse quos dolores?
-          </div>
-        </div>
-        <div class="hir_csempe">
-          <h2>Mentorprogram</h2>
-          <div class="datum">2025.13.24</div>
-          <div class="kedvcsinalo">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus,
-            ullam aliquid velit ea dolorem nesciunt delectus soluta sapiente
-            possimus debitis dignissimos at voluptatibus, voluptatem deleniti
-            est praesentium, esse quos dolores?
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </main>
   </body>
-</html> 
+</html>
