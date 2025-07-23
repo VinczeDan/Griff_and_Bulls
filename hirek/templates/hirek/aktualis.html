@@ -31,13 +31,15 @@
       <hr />
       <div class="hirek_container">
         {% for hir in hirek %}
-        <div class="hir_csempe">
-          <h2>{{ hir.cim }}</h2>
-          <div class="datum">{{ hir.letrehozva|date:"Y.m.d" }}</div>
-          <div class="kedvcsinalo">
-            {{ hir.tartalom|truncatewords:30 }}
+        <a href="{% url 'hir_reszletek' hir.slug %}" class="hir_link">
+          <div class="hir_csempe">
+            <h2>{{ hir.cim }}</h2>
+            <div class="datum">{{ hir.letrehozva|date:"Y.m.d" }}</div>
+            <div class="kedvcsinalo">
+              {{ hir.tartalom|truncatewords:30 }}
+            </div>
           </div>
-        </div>
+        </a>
         {% endfor %}
       </div>
     </main>
