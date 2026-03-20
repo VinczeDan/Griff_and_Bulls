@@ -4,7 +4,7 @@ from .models import Hir
 from .models import Meccs
 from .models import PDFDocument
 from .models import Jatekos, Edzo, Korosztaly
-
+from import_export.admin import ImportExportModelAdmin
 
 
 
@@ -69,7 +69,7 @@ class KorosztalyAdmin(admin.ModelAdmin):
     asszisztens_edzo.short_description = 'Asszisztens edző'
 
 @admin.register(Jatekos)
-class JatekosAdmin(admin.ModelAdmin):
+class JatekosAdmin(ImportExportModelAdmin):
     list_display = ('nev', 'korosztaly', 'get_poszt_display', 'mezszam')
     list_filter = ('korosztaly', 'poszt')
     search_fields = ('nev',)
