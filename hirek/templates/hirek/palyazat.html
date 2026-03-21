@@ -1,19 +1,24 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pályázat</title>
-    <link rel="stylesheet" href="{% static 'hirek/css/footer.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/css/palyazat.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/css/szinek.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/css/header.css' %}" />
-
+    <link rel="stylesheet" href="{% static 'hirek/css/aktualis.css' %}" />
+    <link rel="stylesheet" href="{% static 'hirek/css/footer.css' %}" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'hirek/images/gab_feher.png' %}"
+    />
   </head>
   <body>
-    <header>
+   <header>
       <img
         class="gab_feher_bal"
         src="{% static 'hirek/images/gab_feher.png' %}"
@@ -52,13 +57,6 @@
             Jelenleg nincsenek elérhető pályázati dokumentumok.
           </p>
           {% endfor %}
-
-
-
-
-
-
-
         </div>
       </section>
     </main>

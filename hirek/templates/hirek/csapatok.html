@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="{% static 'hirek/css/header.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/css/footer.css' %}" />
     <link rel="stylesheet" href="{% static 'hirek/css/szinek.css' %}" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'hirek/images/gab_feher.png' %}"
+    />
   </head>
   <body>
     <header>
@@ -51,5 +56,38 @@
         {% endfor %}
       </ul>
     </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3>Griff & Bulls SE</h3>
+          <p><strong>Cím:</strong> 1144 Budapest XIV., Ond vezér útja 47.</p>
+          <p><strong>Telefon:</strong>+36 70 562 6006</p>
+          <p><strong>E-mail:</strong>griffandbulls@gmail.com</p>
+        </div>
+        <section class="footer_kapcsolat," id="kapcsolat">
+          <div class="footer-socials">
+            <h3>Kövess minket!</h3>
+            <a
+              href="https://www.facebook.com/p/Griff-Bulls-SE-100057331514748/"
+              target="_blank"
+              >Facebook</a
+            >
+            <a
+              href="https://www.instagram.com/griff_and_bulls_se?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              target="_blank"
+              >Instagram</a
+            >
+          </div>
+        </section>
+
+        <div class="footer-links">
+          <h3>Fontos linkek</h3>
+          <a href="{% url 'palyazat' %}">Pályzati dokumentumok</a>
+        </div>
+      </div>
+      <p class="footer-copy">
+        © 2025 Griff & Bulls SE - Minden jog fenntartva.
+      </p>
+    </footer>
   </body>
 </html>
